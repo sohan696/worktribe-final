@@ -3155,3 +3155,6 @@ footer.footer {
 html {
   font-display: swap; /* shows fallback font until main font loads */
 }
+h1.hero-title {
+  font-display: swap; /* Shows fallback font until main font loads */
+}
