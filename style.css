@@ -3152,3 +3152,6 @@ textarea.form-control {
 footer.footer {
   min-height: 200px; /* adjust based on your design */
 }
+html {
+  font-display: swap; /* shows fallback font until main font loads */
+}
