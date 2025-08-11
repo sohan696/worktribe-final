@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkTribe - Behind the Scenes</title>
+    <style>
+        /* ===== Root Variables ===== */
+        :root {
+            /* Colors */
+            --primaryColor: #333;
+            --secondaryColor: #737373;
+            --primaryBackground: #f3f6f9;
+            --borderColor: #cdcdcd;
+            --secondaryBorderColor: #666666;
+            --whiteColor: #ffffff;
+            --blackColor: #000000;
+            --rowAltColor: #f9f9f9;
+
+            /* Layout & Sizing */
+            --pagePadding: 20px;
+            --sectionGap: 30px;
+            --cardGap: 30px;
+            --gridGap: 15px;
+            --cardWidth: 200px;
+            --iconCircleSize: 80px;
+            --iconSize: 40px;
+
+            /* Typography */
+            --baseFont: 'Inter','Segoe UI', Arial, sans-serif;
+            --lineHeight: 1.5;
+            --smallFontSize: 0.9em;
+
+            /* Borders & Radius */
+            --borderRadiusSmall: 4px;
+            --borderRadiusMedium: 8px;
+
+            /* Shadows */
+            --boxShadowLight: 0 2px 6px rgba(0,0,0,0.05);
+
+            /* Table */
+            --tableHeaderPadding: 10px;
+            --tableCellPadding: 8px;
+
+            /* Footer */
+            --footerPadding: 15px;
+        }
+        
+
+        /* ===== Base Styles ===== */
+        body {
+            font-family: var(--baseFont);
+            margin: 0;
+            background-color: var(--primaryBackground);
+            line-height: var(--lineHeight);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            padding: 0 20px;
+            background-color: var(--whiteColor); 
+        }
+        nav a {
+            color: var(--blackColor);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        nav h3 {
+            color: var(--blackColor);
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-image: url('Banner.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--whiteColor);
+            text-align: center;
+            text-shadow: #cdcdcd;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: var(--pagePadding);
+            max-width: 1200px;
+            margin: auto;
+            background-color: var(--whiteColor);
+            margin-bottom: var(--sectionGap);
+        }
+        h2, h3, h4 {
+            color: var(--primaryColor);
+        }
+
+        /* ===== Team Grid ===== */
+        .teamgrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Exactly 4 per row */
+            gap: var(--gridGap, 15px);
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        figure {
+            text-align: center;
+            border: 1px solid var(--borderColor, #ccc);
+            border-radius: var(--borderRadiusSmall, 8px);
+            background-color: var(--rowAltColor, #f9f9f9);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Image fills box without distortion */
+        }
+
+        figcaption {
+            padding: 8px;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+
+        /* ===== Table ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid var(--borderColor);
+            padding: var(--tableCellPadding);
+            text-align: center;
+        }
+        th {
+            background-color: rgb(136, 132, 132);
+            color: var(--blackColor);
+        }
+        tr:nth-child(even) {
+            background-color: var(--rowAltColor);
+        }
+
+        .storysection {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .storysection img {
+            width: 45%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .storytext {
+            width: 55%;
+        }
+
+        /* Alternate rows */
+        .storysection.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Philosophy Section */
+        .philosophysection {
+            padding: 80px 0;
+            background: rgb(47, 46, 45);
+            color: var(--whiteColor);
+            text-align: center;
+        }
+
+        .philosophytext {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #values, #goals {
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .valuesgrid, .goalsgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .valuecard, .goalcard {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .iconcircle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            border: 2px solid rgba(0,0,0,0.1);
+            background-color: transparent; /* Transparent background */
+        }
+
+        .iconcircle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .valuecard h4, .goalcard h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .valuecard p, .goalcard p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ===== Final Image ===== */
+        .finalimage img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--borderRadiusSmall);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+            text-align: center;
+            padding: var(--footerPadding);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-left">
+        <h3>WorkTribe</h3>
+    </div>
+    <div class="nav-right">
+        <a href="#team">Team</a>
+        <a href="#story">Story</a>
+        <a href="#values">Values</a>
+        <a href="#goals">Goals</a>
+        <a href="#design">Our Design Diary</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1 style="color: var(--whiteColor);">WorkTribe</h1>
+    <h2 style="color: var(--whiteColor);">Behind the Scenes</h2>
+    <p style="color: var(--whiteColor);">Discover the team and vision driving WorkTribe forward</p>
+</div>
+
+<!-- Team Section -->
+<section id="team">
+    <h2 style="text-align: center; font-size: 3rem";>Meet Our Team</h2>
+    <div class="teamgrid">
+        <figure>
+            <img src="aaradhya.jpeg" alt="Aaradhya Lanjewar">
+            <figcaption>Aaradhya Lanjewar <br>[MBA – Harvard Business School]</figcaption>
+        </figure>
+        <figure>
+            <img src="ananya.jpeg" alt="Ananya Verma">
+            <figcaption>Ananya Verma <br> [MS in Computer Science – Stanford University]</figcaption>
+        </figure>
+        <figure>
+            <img src="sailaja.jpeg" alt="Ankam Sailaja Venkata Ramya">
+            <figcaption>Ankam Sailaja Venkata Ramya <br> [MEng in Computer Science- Massachusetts Institute of Technology]</figcaption>
+        </figure>
+        <figure>
+            <img src="arnesh.jpeg" alt="Arnesh SA">
+            <figcaption>Arnesh SA <br> [Master of Engineering- Harvard Business School] </figcaption>
+        </figure><figure>
+            <img src="sohan.jpeg" alt="Pendyala Sohan Chiranjeevi">
+            <figcaption>Pendyala Sohan Chiranjeevi <br> [MBA- Indian Institute of Management Ahmedabad]</figcaption>
+        </figure>
+        <figure>
+            <img src="satyam.jpeg" alt="Satyam Saxena">
+            <figcaption>Satyam Saxena <br> [BA in Politics and Economics -Massachusetts Institute of Technology]</figcaption>
+        </figure><figure>
+            <img src="vedanth.jpeg" alt="Vishwanath Vedanth">
+            <figcaption>Vishwanath Vedanth <br> [Studies of Women and Sexuality- Harvard Business School]</figcaption>
+        </figure>
+        <figure>
+            <img src="hriday.jpeg" alt="Hridya Bansal">
+            <figcaption>Hridya Bansal <br> [BA in Philosophy, Politics and Economics- University of Oxford]</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- Team Details Table -->
+<section>
+    <h3 style="font-size: 3rem; text-align: center;">Team Details</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Position</th>
+                <th>Contribution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Aaradhya Lanjewar</td><td>IPM05002</td><td>Chief Financial Officer </td><td></td></tr>
+            <tr><td>Ananya Verma</td><td>IPM05007</td><td>Chief Technology Officer</td><td></td></tr>
+            <tr><td>Ankam Sailaja</td><td>IPM05009</td><td>Chief Operations Manager</td><td></td></tr>
+            <tr><td>Arnesh SA</td><td>IPM05013</td><td>Chief Strategy Officer</td><td></td></tr>
+            <tr><td>Pendyala Sohan</td><td>IPM05049</td><td>Chief Executive Officer</td><td></td></tr>
+            <tr><td>Satyam Saxena</td><td>IPM05055</td><td>Director, also Chairman of WorkTribe</td><td></td></tr>
+            <tr><td>Vishwanath Vedanth</td><td>IPM05069</td><td>Chief Accounting Officer</td><td></td></tr>
+            <tr><td>Hridya Bansal</td><td>IPM05171</td><td>Financial Risk Manager</td><td></td></tr>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Story Section -->
+<section id="story">
+  <div class="storysection">
+    <div class="storytext">
+      <h3 style="font-size: 2rem;">Motivation behind WorkTribe</h3>
+      <p style="font-size: large;">One of our team members was helping a friend set up her start-up when they ran into an unexpected challenge, <strong>finding a workspace</strong>. Every place they checked was either overpriced, tied to long-term contracts, or missing essentials like fast Wi-Fi and a quiet environment. <br> 
+        <br>
+        It made us realize how many others must be facing the same struggle. That moment became the seed for WorkTribe, a way to make safe, affordable, well-equipped workspaces easy to find and book, only for the time they’re needed. </p>
+    </div>
+    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" alt="Team collaboration">
+  </div>
+
+  <div class="storysection reverse">
+    <div class="storytext">
+        <h3 style="font-size: 2rem;">Why we exist?</h3>
+        <p>In a rapidly evolving work landscape, we recognized the need for spaces that adapt to the changing needs of modern professionals. Our idea emerged from observing the disconnect between traditional office environments and the dynamic, flexible workstyles of today's workforce.</p>
+        <ul>
+        <li><strong>Born from real struggles</strong> <br> A friend’s search for a safe, affordable place to work showed us the problem was everywhere.</li>
+        <li><strong>Filling a market gap</strong> <br> Most options are overpriced, locked into contracts, or missing the basics professionals need.</li>
+        <li><strong>Built for today’s work culture</strong> <br> Freelancers, start-ups, and remote workers need flexible spaces, not long-term leases.</li>
+        <li><strong>Safety you can trust</strong> <br> Every listing is verified for security, amenities, and professionalism.</li>
+        <li><strong>As simple as booking a hotel</strong> <br> Find and book the perfect spot in minutes, for only the time you need.</li>
+        </ul>
+    </div>
+    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Team discussion">
+  </div>
+
+</section>
+
+<section id="design">
+    <div style="background-color: #f0f0f0; padding: 30px 20px; text-align: center;">
+        <h3 style="color: #2c3e50; font-size: 24px; max-width: 900px; margin: 0 auto 20px;">Our Design Diary</h3>
+    <div style="font-size: 16px; color: #555; max-width: 900px; margin: 0 auto; text-align: left; line-height: 1.6;">
+
+    
+    <p>When we built the WorkTribe website, every decision was made with our coworking community in mind. Here’s why we chose what we did:</p>
+
+    <strong>Why We Picked Black and White</strong>
+    <p>Coworking spaces are about focus and productivity. Black and white keeps things simple and distraction-free. We want people to feel confident choosing us for their workspace, and this classic color combo feels reliable and timeless.</p>
+
+    <strong>How We Built the Layout</strong>
+    <p>Coworking spaces need room to breathe, same with our site. A clean layout helps visitors find what they need quickly without feeling overwhelmed. Like a good conversation in a shared office, our messages are clear and direct, making it easy to understand our services fast. We guide visitors through who we are, what we offer, why we’re trustworthy, and how to connect—just like a helpful host showing someone around.</p>
+
+    <strong>Our Style Choices</strong>
+    <p>Coworking is modern and forward-thinking, so we wanted a look that’s fresh but not flashy, just honest and professional. When people visit looking for workspace, they want info fast. Clear fonts like Inter and Helvetica Neue keep everything simple and neat.</p>
+
+    <strong>Logo and favicon:</strong>
+    <p>Simple and strong, like our community. The circle stands for unity, the “WT” is clear, and the diamond adds a touch of quality.</p>
+
+    <strong>Why Our Images Matter</strong>
+    <p>Coworking is about people coming together. Our photos show real collaboration and community, not just empty desks.</p>
+
+    <strong>Navigation and Footer</strong>
+    <p>Easy to find important pages without distraction, just like good signage in a coworking space. Our Navigation bar contains what services we are offering, locations, about us, contact, and host space. The black footer shows our details that users may want to explore like our social media platforms, and other details.</p>
+
+    <strong>Why Host Option:</strong>
+    <p>We decided to add an option for people to become hosts on our website. This way, hosts can list their coworking spaces or even empty places that could be converted into coworking spaces, kind of like what Airbnb does. We made sure that every place goes through proper verification before it’s shown to customers to ensure security, safety, and credibility.</p>
+
+    <strong>TAM, SAM, SOM Model:</strong>
+    <ul>
+      <li><strong>TAM (Total Addressable Market):</strong> We see our service as open to anyone in the world who needs a workspace outside their home or permanent office. This includes freelancers, startups, corporates, and event organizers.</li>
+      <li><strong>SAM (Serviceable Available Market):</strong> Right now, the main customers are freelancers, small startups, and corporates who book coworking spaces for meetings or events as per their needs.</li>
+      <li><strong>SOM (Serviceable Obtainable Market):</strong> Initially, we expect to attract mostly customers in big metropolitan areas like Delhi, Pune, and Bangalore. These cities have lots of companies, freelancers, and hosts, so we’ll focus there to build our base.</li>
+    </ul>
+
+    <strong>Prices:</strong>
+    <p>We researched competitors’ pricing closely and based our prices on that. We considered how long people book for and what basic amenities are included in the coworking spaces. This helped us come up with competitive and fair prices for our listings.</p>
+
+    <strong>FAQs:</strong>
+    <p>We wrote an FAQ section to address common questions users might have about our services. We know people often have doubts, so this should help them quickly find answers. For anything else, they can always reach out through our contact page.</p>
+
+    <strong>Co-working Spaces & Office Spaces:</strong>
+    <p>We focused mainly on these two types of spaces because they are our core services. The coworking spaces are designed for individuals or small groups (like 4 people) who want a flexible workspace. This targets freelancers, individuals, and small teams. For bigger teams and corporates, we are offering office space bookings where they can get a professional environment tailored to their needs.</p>
+
+    <strong>In Future:</strong>
+    <p>We plan to add event halls that small businesses can rent for parties or special occasions. Also, for those who don’t have a place to work, our coworking spaces will offer a reliable solution. We want to add meeting rooms especially with presentation facilities like projectors, studio rooms, and editing rooms to cater to more professional needs like conferences.</p>
+
+    <strong>Cafes & Food Court Tie-ups:</strong>
+    <p>As we grow, we’d love to partner with cafes and restaurants nearby to offer exclusive meals and drinks to our customers, even providing table service. This will help keep their work uninterrupted and give them a unique, comfortable experience. Plus, it’ll be a great marketing strategy to attract more customers to our coworking spaces.</p>
+
+    <strong>Awards & Certifications:</strong>
+    <p>We’ve included awards and certifications mainly to build credibility and trust with our users. We’ve been recognized as the Co-working Brand of the Year, Most Eco-Friendly Brand, and Best Organization for Women Empowerment. We’re also Great Place to Work certified. On top of that, we have important security certifications like ISO 27001 for data safety and PCI DSS for payment security. These badges help show that we take quality and security seriously, even though our main focus is on creating a great workspace experience.</p>
+
+    <strong>Why the Name WorkTribe:</strong>
+    <p>We chose the name “WorkTribe” because it means more than just a place to work. It’s about creating a community, a tribe, where professionals, startups, and creatives can connect, share resources, and grow together. To us, work isn’t just about having a desk, it’s about belonging to a supportive, productive group that helps each other succeed.</p>
+
+    <strong>Why Bangalore as Headquarters:</strong>
+    <p>We picked Bangalore because it’s the co-working capital of India. It’s where most startups and tech companies thrive, and there’s a huge demand for flexible office spaces. The city’s dynamic ecosystem and talent pool make it the perfect place to build our headquarters.</p>
+
+    <strong>Why Working Spaces as Our Topic:</strong>
+    <p>We decided to focus on coworking spaces because the demand is booming in India. Startups, freelancers, and even big companies are moving towards flexible work models. We believe a well-designed workspace not only boosts productivity and creativity but is also cost-effective compared to traditional offices. It felt like the right market to serve, and we wanted to create something that truly supports this shift.</p>
+
+    <strong>Our Main Stakeholders:</strong>
+    <p>When building our platform, we identified key stakeholders whose access to information needs to be managed carefully. These include:</p>
+    <ul>
+      <li><strong>Management (Founders, Admin Team):</strong> They need full access to business-critical data like financials, employee records, and contracts to keep the company running smoothly.</li>
+      <li><strong>Employees (Operations, Marketing, Support Staff):</strong> They work on daily tasks and projects, so they access work-related documents, internal communication, and client info relevant to their roles.</li>
+      <li><strong>Vendors / Partners (Cafes, Food Courts, Service Providers):</strong> They manage partnership details such as contracts, payment records, and service schedules, and update their own menus, pricing, and offers.</li>
+      <li><strong>Users (General Visitors & Prospects):</strong> Our users can view and update their own profiles, bookings, invoices, and payment info, but have no access to any internal company data. We also consider general users who browse or interact with our site. Their data privacy and security is crucial, so we ensure that any information they provide is protected and used only for the intended purpose.</li>
+    </ul>
+
+    <strong>Following the CIA Data Triad for Security:</strong>
+    <p>We know that protecting data is a top priority. That’s why we strictly follow the CIA triad principles: Confidentiality, Integrity, and Availability for all stakeholders:</p>
+    <ul>
+      <li><strong>Confidentiality:</strong> We carefully control who can see what. This keeps everyone’s data private and secure.</li>
+      <li><strong>Integrity:</strong> We make sure that the data is accurate and trustworthy. Stakeholders can update only the information they are responsible for. This prevents unauthorized or accidental changes.</li>
+      <li><strong>Availability:</strong> We ensure that authorized users can access the systems and data whenever they need to. Management can access systems 24/7 to keep operations running smoothly. Employees have access during working hours, and clients can book or update their info anytime. Vendors access their dashboards during agreed service times.</li>
+    </ul>
+
+    <strong>Why Only These 5 Locations?</strong>
+    <p>We picked these five locations because they’re close to major business hubs and have a strong local business ecosystem—perfect for our target market. Limiting to fewer locations helps us maintain top-notch service and smooth operations. These spots also have great growth potential while keeping our brand consistent.</p>
+
+    <strong>Maintenance of the Website</strong>
+    <p>We keep our website fresh by regularly updating listings and prices. Monthly security patches and backups protect our data, and we constantly monitor performance to ensure fast load times. We also focus on mobile optimization so it works smoothly on any device. Plus, quarterly SEO audits help us stay visible and easy to find on search engines.</p>
+
+    <strong>Why We Made the About Us Section Like This</strong>
+    <p>When creating the About Us page, we wanted to do more than just list facts. We thought about what visitors really want to know who we are, what we stand for, and why they should trust us. So, we broke it down into clear parts:</p>
+    <ul>
+      <li><strong>Overview:</strong> We included this to give a quick but meaningful intro. We wanted people to immediately understand that we’re not just renting desks, but building flexible, inspiring workspaces for different kinds of users, whether freelancers or big companies.</li>
+      <li><strong>Locations:</strong> Instead of overwhelming users with many places, we focused on explaining why we chose these five spots. It’s about quality, convenience, and serving the right customers where they need us most.</li>
+      <li><strong>Benefits:</strong> We wanted to highlight what makes our spaces special, community, creativity, and comfort. This section helps visitors see the value beyond just physical space.</li>
+      <li><strong>Our Clients:</strong> Showcasing big brands alongside freelancers and startups was important. We wanted to build credibility but also show we’re flexible and cater to everyone.</li>
+      <li><strong>Support & Company Info:</strong> We included this to assure users they’ll get help when needed, and that we run our business transparently and professionally.</li>
+    </ul>
+
+    <strong>Competitor Analysis: How We Did It, What We Learned, and How We’re Different</strong>
+    <p>We started by researching major competitors like Regus, Spaces, and some local players. We studied their locations, pricing, services, and customer feedback.</p>
+    <ul>
+      <li><strong>What We Learned:</strong>
+        <ul>
+          <li>Most competitors have many locations but sometimes sacrifice quality or personal touch.</li>
+          <li>Technology is becoming a key factor for smart booking, easy payments, and automated facilities matter a lot.</li>
+          <li>Flexible contracts and community-building activities are big pluses for customers.</li>
+        </ul>
+      </li>
+      <li><strong>How We Applied This:</strong>
+        <ul>
+          <li>We focused on prime, strategic locations to keep things manageable and ensure high service quality.</li>
+          <li>We integrated technology deeply, especially with our booking system and payments, to make user experience smooth and fast.</li>
+          <li>We added community features like events and networking opportunities to help our users grow professionally.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <strong>What Makes Us Different: Host Integration</strong>
+    <p>Unlike many platforms that just list coworking spaces, we let individual hosts add their own spaces. This helps increase inventory quickly and brings unique local spots to the community. Hosts are verified, and their listings get quality checks before going live.</p>
+
+    <strong>Use of Ngrok</strong>
+    <p>We use Ngrok during development to create secure tunnels from local servers to the internet. This helps with testing and demonstration without deploying full infrastructure.</p>
+
+    <strong>Use of GitHub</strong>
+    <p>GitHub is our code repository and version control system. It lets us track changes, collaborate smoothly, and roll back if needed.</p>
+
+    <strong>Security Certificate</strong>
+    <p>We use HTTPS with SSL certificates to ensure all data transferred between users and our site is encrypted and safe.</p>
+
+    <strong>Social Media Integration</strong>
+    <p>We linked our Facebook, Instagram, Twitter, and LinkedIn pages so users can follow updates, events, and announcements easily.</p>
+
+    <strong>Book a Tour</strong>
+    <p>Visitors can book a tour directly through the site, choosing date and time, and receive a confirmation email.</p>
+
+    <strong>Contact Page</strong>
+    <p>Our contact page includes multiple ways to reach us—email, phone, and a form for quick queries.</p>
+
+    <strong>Live Chat / Complaints</strong>
+    <p>We offer a live chat support system for instant help and a dedicated complaints form to handle user issues professionally.</p>
+
+    <strong>Google Maps Integration</strong>
+    <p>We embedded Google Maps to show exact locations of all coworking and office spaces, helping users plan their visit easily.</p>
+
+    <strong>Form Validation & Booking System</strong>
+    <p>We implemented thorough form validation to reduce errors and make booking straightforward. Our booking system handles availability, payments, and confirmation automatically.</p>
+
+    <strong>24/7 Customer Service Outsourcing</strong>
+    <p>To offer round-the-clock support, we partnered with a professional service provider to answer calls and resolve common queries any time.</p>
+
+    <strong>Why Razorpay</strong>
+    <p>Razorpay handles all online payments securely, supporting multiple payment methods and ensuring fast, reliable transactions.</p>
+
+  </div>
+
+  
+</section>
+
+
+<!-- Philosophy Section -->
+<section class="philosophysection">
+        <div class="container">
+            <h2 class="sectionsubtitle"; style="font-size: 2rem; color: var(--whiteColor)">Our Philosophy</h2>
+            <p class="philosophy-text">
+            We believe great work happens when the right environment meets the right mindset.
+            That’s why we’re committed to making professional spaces accessible, affordable, and trustworthy for everyone. Our goal is simple. Remove the barriers between people and the places that help them create, collaborate, and grow. </p>
+           </p>
+        </div>
+    </section>
+
+<!-- Values Section -->
+<section id="values">
+    <h3 style="text-align:center; font-size:2rem; margin-bottom:30px;">Our Values</h3>
+    <div class="valuesgrid">
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="access.png" alt="Accessibility">
+            </div>
+            <h4>Accessibility</h4>
+            <p>Everyone should have equal access to quality work environments</p>
+        </div>
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="Transparency.png" alt="Transparency">
+            </div>
+            <h4>Transparency</h4>
+            <p>No hidden fees, no surprises. Clear information always</p>
+        </div>
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="Affordability.png" alt="Affordable">
+            </div>
+            <h4>Affordable</h4>
+            <p>The minimum rent to be available for every kind of user</p>
+        </div>
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="Community.png" alt="Community">
+            </div>
+            <h4>Community</h4>
+            <p>We connect people, spaces, and opportunities to create meaningful networks</p>
+        </div>
+    </div>
+</section>
+
+<!-- Goals Section -->
+<section id="goals">
+    <h3 style="text-align:center; font-size:2rem; margin:50px 0 30px 0;">The Goals</h3>
+    <div class="goalsgrid">
+        <div class="goalcard">
+            <div class="iconcircle">
+                <img src="Effortless.png" alt="Workspace Access">
+            </div>
+            <h4>Make workspace access effortless</h4>
+            <p>Creating smooth processes for booking and using spaces without hassle.</p>
+        </div>
+        <div class="goalcard">
+            <div class="iconcircle">
+                <img src="Safety.png" alt="Trust and Safety">
+            </div>
+            <h4>Ensure trust and safety</h4>
+            <p>Providing a secure and reliable platform for both hosts and users.</p>
+        </div>
+        <div class="goalcard">
+            <div class="iconcircle">
+                <img src="Local Hosts.png" alt="Promote Local Hosts">
+            </div>
+            <h4>Promote local hosts</h4>
+            <p>Empowering local workspace providers and boosting community economies.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- How We’re Different Section -->
+<section id="difference">
+    <h3 class="section-title", style="font-size: 2rem; text-align: center;">How We’re Different</h3>
+    <p class="sectionsubtitle">
+        Built for real people who need real workspaces. Fast, local, and focused on productivity.
+    </p>
+
+    <div class="valuesgrid">
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="local.png" alt="Hyperlocal Focus">
+            </div>
+            <h4>Hyperlocal focus</h4>
+            <p>Discover nearby workspaces filtered for commute, neighborhood vibe and convenience.</p>
+        </div>
+
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="booking.jpg" alt="Book Only What You Need">
+            </div>
+            <h4>Book only what you need</h4>
+            <p>Hourly and daily options — no long leases, no hidden commitments.</p>
+        </div>
+
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="verify.jpg" alt="Verified Spaces">
+            </div>
+            <h4>Verified spaces</h4>
+            <p>Each listing is checked for safety, amenities and a professional environment.</p>
+        </div>
+
+        <div class="valuecard">
+            <div class="iconcircle">
+                <img src="product.jpg" alt="Designed for Productivity">
+            </div>
+            <h4>Designed for productivity</h4>
+            <p>Filters for Wi-Fi speed, noise level, seating types and on-site facilities.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final Section -->
+<section>
+    <div class="finalimage">
+        <img src="teamteam.jpg" alt="WorkTribe Team">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h2 style="font-size: x-large; color: var(--whiteColor);">WorkTribe - Group 10 - Section A</h2>
+    <p>Building the future of collaborative workspaces</p>
+</footer>
+
+</body>
+</html>
