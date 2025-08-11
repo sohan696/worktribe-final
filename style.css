@@ -3148,3 +3148,7 @@ textarea.form-control {
 
 /* Let clicks pass through images so they don't block buttons */
 .slide-image, .slide-image img { pointer-events: none; }
+
+footer.footer {
+  min-height: 200px; /* adjust based on your design */
+}
