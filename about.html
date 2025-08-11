@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Worktribe - Professional Workspace Solutions</title>
+
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="LOGOMAIN.png">
+    <style>
+        /* Additional styles for About page navigation */
+        .Worktribe-about-section {
+            padding: calc(80px + var(--spacing-2xl)) 0 var(--spacing-4xl) 0;
+            background: var(--wework-light-gray);
+        }
+
+        .Worktribe-about-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .Worktribe-about-header h3 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--wework-black);
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -0.02em;
+        }
+
+        .Worktribe-about-header p {
+            font-size: 1.125rem;
+            color: var(--wework-text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .Worktribe-about-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-3xl);
+            padding: 0 var(--spacing-lg);
+        }
+
+        .Worktribe-about-nav-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--wework-white);
+            border: 2px solid var(--wework-text-gray);
+            border-radius: var(--radius-full);
+            color: var(--wework-text-gray);
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .Worktribe-about-nav-btn:hover,
+        .Worktribe-about-nav-btn.active {
+            background: var(--wework-black);
+            border-color: var(--wework-black);
+            color: var(--wework-white);
+            transform: translateY(-2px);
+        }
+
+        .Worktribe-about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .Worktribe-about-page {
+            display: none;
+            background: var(--wework-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .Worktribe-about-page.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .Worktribe-about-page h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--wework-black);
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -0.02em;
+        }
+
+        .Worktribe-about-page p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--wework-text-gray);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .Worktribe-location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .Worktribe-location-card {
+            background: var(--wework-light-gray);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+        }
+
+        .Worktribe-location-card:hover {
+            transform: translateY(-4px);
+            background: var(--wework-white);
+            border-color: var(--wework-accent-yellow);
+            box-shadow: var(--shadow-md);
+        }
+
+        .Worktribe-location-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--wework-black);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .Worktribe-location-address {
+            color: var(--wework-text-gray);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .Worktribe-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .Worktribe-benefit-item {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background: var(--wework-light-gray);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+        }
+
+        .Worktribe-benefit-item:hover {
+            transform: translateY(-4px);
+            background: var(--wework-white);
+            border-color: var(--wework-accent-blue);
+            box-shadow: var(--shadow-md);
+        }
+
+        .Worktribe-benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .Worktribe-benefit-item h5 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--wework-black);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .Worktribe-benefit-item p {
+            color: var(--wework-text-gray);
+            margin: 0;
+        }
+
+        /* New Contact Section Styles */
+        .Worktribe-contact-details-section {
+            margin-top: var(--spacing-4xl);
+            background: var(--wework-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .Worktribe-contact-details-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .Worktribe-contact-details-header h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--wework-black);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+        }
+
+        .Worktribe-contact-details-header p {
+            font-size: 1.125rem;
+            color: var(--wework-text-gray);
+            margin: 0;
+        }
+
+        .Worktribe-contact-details-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: start;
+        }
+
+        .Worktribe-company-details {
+            padding-right: var(--spacing-lg);
+        }
+
+        .Worktribe-company-details h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--wework-black);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .Worktribe-detail-item {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .Worktribe-detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .Worktribe-detail-label {
+            font-weight: 600;
+            color: var(--wework-black);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xs);
+            display: block;
+        }
+
+        .Worktribe-detail-value {
+            color: var(--wework-text-gray);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .Worktribe-detail-value a {
+            color: var(--wework-accent-blue);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+
+        .Worktribe-detail-value a:hover {
+            color: var(--wework-black);
+            text-decoration: underline;
+        }
+
+        .Worktribe-map-container {
+            position: relative;
+            height: 400px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: var(--spacing-md);
+            background: var(--wework-light-gray);
+        }
+
+        .Worktribe-map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .Worktribe-about-navigation {
+                gap: var(--spacing-xs);
+            }
+
+            .Worktribe-about-nav-btn {
+                padding: var(--spacing-xs) var(--spacing-md);
+                font-size: 12px;
+            }
+
+            .Worktribe-about-page {
+                padding: var(--spacing-lg);
+            }
+
+            .Worktribe-location-grid,
+            .Worktribe-benefits-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+
+            .Worktribe-contact-details-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .Worktribe-company-details {
+                padding-right: 0;
+            }
+
+            .Worktribe-map-container {
+                height: 300px;
+            }
+        }
+
+        /* CSS Variables fallback */
+        :root {
+            --wework-black: #000000;
+            --wework-white: #ffffff;
+            --wework-text-gray: #666666;
+            --wework-light-gray: #f8f9fa;
+            --wework-accent-yellow: #ffd700;
+            --wework-accent-blue: #007bff;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --spacing-4xl: 80px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-normal: 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1 class="logo" onclick="navigateHome()">WorkTribe.</h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-item dropdown" id="workspace-dropdown">
+                    <a href="#workspace" class="nav-link dropdown-toggle">
+                        Workspace
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="officespace.html" class="dropdown-item">Office Spaces</a>
+                        <a href="coworking.html" class="dropdown-item">Coworking Spaces</a>
+                    
+                    </div>
+                </div>
+                
+            
+                <a href="locations.html" class="nav-link locations-link">Locations</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+
+            </div>
+            <div class="nav-cta">
+                <button style="
+  background-color: black;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+" onclick="window.location.href='host.html'">
+  Host Space
+</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="Worktribe-about-section">
+            <div class="Worktribe-about-header">
+                <h3>About Worktribe</h3>
+                <p>We make work effortless. Discover our workspace solutions and locations across India.</p>
+            </div>
+
+            <div class="Worktribe-about-navigation">
+                <button class="Worktribe-about-nav-btn active" data-Worktribe-page="overview">Overview</button>
+                <button class="Worktribe-about-nav-btn" data-Worktribe-page="locations">Locations</button>
+                <button class="Worktribe-about-nav-btn" data-Worktribe-page="benefits">Benefits</button>
+                <button class="Worktribe-about-nav-btn" data-Worktribe-page="clients">Our Clients</button>
+                <button class="Worktribe-about-nav-btn" data-Worktribe-page="support">Support</button>
+            </div>
+
+            <div class="Worktribe-about-content">
+                <!-- Overview Page -->
+                <div class="Worktribe-about-page active" id="Worktribe-overview">
+                    <h4>Welcome to Worktribe</h4>
+                   <h5>Our Story</h5>
+<p>Worktribe was created to solve a simple but persistent challenge: finding a reliable, flexible workspace shouldn’t be time-consuming or uncertain. We noticed that while countless coworking spaces, private offices, and meeting rooms exist across India, there was no single trusted platform to discover, compare, and book them with confidence.
+We set out to change that — not by owning or operating spaces ourselves, but by building an ecosystem that brings together verified workspace providers and professionals seeking the perfect place to work. Today, Worktribe is the bridge between those who have inspiring spaces and those who need them, making work effortless for everyone involved.</p>
+
+<br>
+
+<h5>Trust & Security</h5>
+Trust is the foundation of Worktribe, and we protect it from both sides:
+<ul>
+<li>Listings – Every space listed on our platform is vetted through background checks, ownership verification, and on-site quality inspections.</li>
+
+<li>Transparent Profiles – Listers provide complete, accurate details and real images so you know exactly what to expect.</li>
+
+<li>Secure Transactions – Payments are processed through encrypted gateways with fraud prevention measures in place.</li>
+
+<li>User Reviews & Ratings – Members share genuine feedback, helping others make informed choices and holding listers accountable.</li>
+
+<li>Two-Way Accountability – Just as listers are verified, users are also required to maintain accurate profiles and follow community guidelines, ensuring mutual respect and safety.</li>
+
+<li>Data Protection – We safeguard personal information with industry-standard encryption and privacy protocols.</li>
+</ul>
+                </div>
+
+                <!-- Locations Page -->
+                <div class="Worktribe-about-page" id="Worktribe-locations">
+                    <h4>Our Locations Across Metro India</h4>
+                    <p>We have 25 premium locations across 5 major cities in India.</p>
+                    <br>
+                    <div class="Worktribe-location-grid">
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Mumbai (5 Locations)</div>
+                            <div class="Worktribe-location-address">Marine Drive Hub, Powai Innovation Tower, BKC Prime, Lower Parel Work Loft, Andheri Creative Bay</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Delhi NCR (5 Locations)</div>
+                            <div class="Worktribe-location-address">Connaught Elite, Gurgaon Central, Noida Sector 18, South Delhi Green Work, Dwarka Innovation Bay</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Bengaluru (5 Locations)</div>
+                            <div class="Worktribe-location-address">MG Road Hive, Indiranagar Loft, Whitefield Tech Nest, Koramangala Start Hub, HSR Creative Pod</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Hyderabad (5 Locations)</div>
+                            <div class="Worktribe-location-address">HITEC City Work Arena, Gachibowli Central, Banjara Hills Loft, Jubilee Hills Start Zone, Begumpet Work Lounge</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Pune (5 Locations)</div>
+                            <div class="Worktribe-location-address">Koregaon Park Luxe, Hinjawadi Prime, Baner Heights, Kharadi Work Loft, Aundh Studio Bay</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Page -->
+                <div class="Worktribe-about-page" id="Worktribe-benefits">
+                    <h4>Exclusive Worktribe Benefits</h4>
+                    <div class="Worktribe-benefits-grid">
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">🛡</div>
+                            <h5>Verified Spaces</h5>
+                            <p>Every listing goes through strict verification — from ownership documents to quality checks — so you can book with confidence.</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">💬</div>
+                            <h5>Two-Way Reviews</h5>
+                            <p>Both users and listers can leave feedback, creating a transparent, accountable community for everyone.</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">👥</div>
+                            <h5>Smart Matching</h5>
+                            <p>Our platform recommends spaces based on your preferences, budget, and past bookings — saving you hours of searching.</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">🔐</div>
+                            <h5>Secure Bookings & Payments</h5>
+                            <p>All transactions are protected with encrypted gateways and fraud prevention tools to safeguard your money and data.</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">🤝</div>
+                            <h5>Dedicated Dispute Resolution</h5>
+                            <p>We step in quickly to resolve issues between users and listers, ensuring fairness and trust on both sides.</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">🚺</div>
+                            <h5>Women’s Safety Assured</h5>
+                            <p>Access to networking and community events</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clients Page -->
+                <div class="Worktribe-about-page" id="Worktribe-clients">
+                    <h4>Trusted by Leading Companies</h4>
+                    <p>We're proud to serve innovative companies across various industries:</p>
+                    <br>
+                    <div class="Worktribe-location-grid">
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Razorpay</div>
+                            <div class="Worktribe-location-address">Fintech leader, uses coworking for regional teams</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">CRED</div>
+                            <div class="Worktribe-location-address">Premium finance & rewards startup</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">UpGrad</div>
+                            <div class="Worktribe-location-address">EdTech giant with satellite teams</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Dunzo</div>
+                            <div class="Worktribe-location-address">Popular quick-commerce platform</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Zomato</div>
+                            <div class="Worktribe-location-address">Food delivery leader, uses flexible offices for regional operations</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Byju’s</div>
+                            <div class="Worktribe-location-address">EdTech pioneer with hybrid workspace needs for teaching teams</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Paytm</div>
+                            <div class="Worktribe-location-address">Fintech super-app leveraging coworking spaces for expansion teams</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Swiggy</div>
+                            <div class="Worktribe-location-address">Quick-commerce and food delivery platform with distributed team hubs</div>
+                        </div>
+                        <div class="Worktribe-location-card">
+                            <div class="Worktribe-location-name">Meesho</div>
+                            <div class="Worktribe-location-address">E-commerce startup with remote pods</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Support Page -->
+                <div class="Worktribe-about-page" id="Worktribe-support">
+                    <h4>Customer Support & Help</h4>
+                    <p>Our dedicated support team is here to help you make the most of your Worktribe experience.</p>
+                    <br>
+                    <div class="Worktribe-benefits-grid">
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">📞</div>
+                            <h5>Phone Support</h5>
+                            <p>Speak directly with our support team</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">💬</div>
+                            <h5>Live Chat</h5>
+                            <p>Instant assistance via chat</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">📧</div>
+                            <h5>Email Support</h5>
+                            <p>Detailed help via email</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">❓</div>
+                            <h5>Help Center</h5>
+                            <p>Self-service knowledge base</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">🏢</div>
+                            <h5>Corporate Solutions</h5>
+                            <p>Dedicated enterprise support</p>
+                        </div>
+                        <div class="Worktribe-benefit-item">
+                            <div class="Worktribe-benefit-icon">📍</div>
+                            <h5>Visit Us</h5>
+                            <p>Tour any of our 25 locations</p>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+            <!-- New Contact Details Section with Map -->
+            <div class="Worktribe-contact-details-section">
+                <div class="Worktribe-contact-details-header">
+                    <h4>Visit Our Office</h4>
+                    <p>Get in touch with us or visit our headquarters at IIM Rohtak</p>
+                </div>
+                
+                <div class="Worktribe-contact-details-content">
+                    <!-- Company Details - Left Side -->
+                    <div class="Worktribe-company-details">
+                        <h5>Company Information</h5>
+                        
+                        <div class="Worktribe-detail-item">
+                            <span class="Worktribe-detail-label">Company Name</span>
+                            <div class="Worktribe-detail-value">Worktribe Pvt. Ltd.</div>
+                        </div>
+                        
+                        <div class="Worktribe-detail-item">
+                            <span class="Worktribe-detail-label">Email Address</span>
+                            <div class="Worktribe-detail-value">
+                                <a href="mailto:contact@Worktribe.com">contact@Worktribe.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="Worktribe-detail-item">
+                            <span class="Worktribe-detail-label">Phone Number</span>
+                            <div class="Worktribe-detail-value">
+                                <a href="tel:+911234567890">+91 12345 67890</a>
+                            </div>
+                        </div>
+                        
+                        <div class="Worktribe-detail-item">
+                            <span class="Worktribe-detail-label">Office Address</span>
+                            <div class="Worktribe-detail-value">
+                                Indian Institute of Management Rohtak<br>
+                                Management City, Rohtak<br>
+                                Haryana - 124001<br>
+                                India
+                            </div>
+                        </div>
+                        
+                        <div class="Worktribe-detail-item">
+                            <span class="Worktribe-detail-label">Business Hours</span>
+                            <div class="Worktribe-detail-value">
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM<br>
+                                Sunday: Closed
+                            </div>
+                        </div>
+                        
+                        <div class="Worktribe-detail-item">
+                            <span class="Worktribe-detail-label">Support</span>
+                            <div class="Worktribe-detail-value">
+                                <a href="mailto:support@Worktribe.com">support@Worktribe.com</a><br>
+                                24/7 Customer Support Available
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map - Right Side -->
+                    <div class="Worktribe-map-container">
+                        <iframe 
+                            class="Worktribe-map-frame"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.518292802496!2d76.53961567471703!3d28.853198174027217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d84ddac3da907%3A0x79ac48492e89ec85!2sIndian%20Institute%20Of%20Management%E2%80%93Rohtak%20(IIM%E2%80%93Rohtak)!5e0!3m2!1sen!2sin!4v1754746412680!5m2!1sen!2sin"   
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="IIM Rohtak Location Map">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Navigation functionality
+        function navigateHome() {
+            window.location.href = 'index2.html';
+        }
+
+        function navigateToCoworking(event) {
+            if (event) event.preventDefault();
+            window.location.href = 'coworking.html';
+        }
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // About page navigation functionality
+        const aboutNavBtns = document.querySelectorAll('.Worktribe-about-nav-btn');
+        const aboutPages = document.querySelectorAll('.Worktribe-about-page');
+
+        aboutNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetPage = btn.getAttribute('data-Worktribe-page');
+                
+                // Remove active class from all buttons and pages
+                aboutNavBtns.forEach(b => b.classList.remove('active'));
+                aboutPages.forEach(page => page.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding page
+                btn.classList.add('active');
+                document.getElementById(`Worktribe-${targetPage}`).classList.add('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Dropdown functionality for desktop
+        const dropdown = document.getElementById('workspace-dropdown');
+        let dropdownTimer;
+
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(dropdownTimer);
+            dropdown.querySelector('.dropdown-menu').style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            dropdownTimer = setTimeout(() => {
+                dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            }, 200);
+        });
+
+        // Mobile dropdown functionality
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll for the contact details section
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe the contact details section
+        const contactSection = document.querySelector('.Worktribe-contact-details-section');
+        if (contactSection) {
+            contactSection.style.opacity = '0';
+            contactSection.style.transform = 'translateY(30px)';
+            contactSection.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(contactSection);
+        }
+    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" style="color: white;">WorkTribe</h3>
+                    <p class="footer-description">Making life work. Workspace, community, and services for creators and businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading" style="color: white;">Workspace</h4>
+                    <ul class="footer-links">
+                        <li><a href="officespace.html" class="footer-link">Office spaces</a></li>
+                        <li><a href="coworking.html" class="footer-link">Coworking Spaces</a></li>
+                    
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading" style="color: white;">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Worktribe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      // Override to ensure About page logo/home goes back to main landing page
+      function navigateHome() {
+        window.location.href = 'index2.html';
+      }
+    </script>
+</body>
+</html>

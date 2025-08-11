@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The WorkTribe - Locations Across Metro India</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="LOGOMAIN.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1 class="logo" onclick="navigateHome()">WorkTribe.</h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-item dropdown" id="workspace-dropdown">
+                    <a href="#workspace" class="nav-link dropdown-toggle">
+                        Workspace
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="officespace.html" class="dropdown-item">Office Spaces</a>
+                        <a href="coworking.html" class="dropdown-item">Coworking Spaces</a>
+                    
+                    </div>
+                </div>
+                
+            
+                <a href="locations.html" class="nav-link locations-link">Locations</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+
+            </div>
+            <div class="nav-cta">
+                <a href="host.html" class="nav-link btn">Host Space</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Locations Landing Page -->
+    <section class="locations-hero">
+        <div class="container">
+            <div class="locations-hero-content">
+                <h1 class="locations-hero-title">The WorkTribe — Locations Across Metro India</h1>
+                <p class="locations-hero-subtitle">Find the perfect workspace near you. From bustling business districts to creative neighborhoods, we're everywhere you need to be.</p>
+                
+                <!-- Search Bar Section -->
+                <div class="location-search">
+                    <div class="search-form">
+                        <div class="search-field">
+                            <label for="city-select" class="search-label">Location</label>
+                            <select id="city-select" class="search-select">
+                                <option value="">All Cities</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi NCR</option>
+                                <option value="bengaluru">Bengaluru</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="pune">Pune</option>
+                            </select>
+                        </div>
+                        <div class="search-field">
+                            <label for="date-select" class="search-label">Date</label>
+                            <input type="date" id="date-select" class="search-input">
+                        </div>
+                        <button class="search-btn" onclick="searchLocations()">Search Locations</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- All Locations -->
+    <section class="all-locations">
+        <div class="container">
+            <h2 class="section-title">All Locations</h2>
+            <div class="locations-count">
+                <span class="count-text">Showing <span id="location-count">25</span> locations across India</span>
+            </div>
+            
+            <div class="locations-grid" id="locations-grid">
+                <!-- Mumbai Locations -->
+                <div class="location-tile" data-city="mumbai">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marine Drive Hub">
+                        <div class="location-badge">Mumbai</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Marine Drive Hub</h3>
+                        <p class="location-address">19 Dr Annie Besant Rd, Worli, Mumbai, Maharashtra 400018</p>
+                        <div class="location-features">
+                            <span class="feature-tag">24/7 Access</span>
+                            <span class="feature-tag">High-Speed Wi-Fi</span>
+                            <span class="feature-tag">Coffee Bar</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('19 Dr Annie Besant Rd, Worli, Mumbai')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="mumbai">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Powai Innovation Tower">
+                        <div class="location-badge">Mumbai</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Powai Innovation Tower</h3>
+                        <p class="location-address">Hiranandani Gardens, Vilas Nagar, Powai, Mumbai, Maharashtra 400076</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Printing Facilities</span>
+                            <span class="feature-tag">On-site Support</span>
+                            <span class="feature-tag">Networking Events</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Hiranandani Gardens, Vilas Nagar, Powai, Mumbai')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="mumbai">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BKC Prime">
+                        <div class="location-badge">Mumbai</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – BKC Prime</h3>
+                        <p class="location-address">G Block, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Premium Location</span>
+                            <span class="feature-tag">Secure Access</span>
+                            <span class="feature-tag">Kitchen Facilities</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('G Block, Bandra Kurla Complex, Mumbai')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="mumbai">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lower Parel Work Loft">
+                        <div class="location-badge">Mumbai</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Lower Parel Work Loft</h3>
+                        <p class="location-address">Lodha Supremus, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Modern Design</span>
+                            <span class="feature-tag">Community Events</span>
+                            <span class="feature-tag">Wellness Space</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Lodha Supremus, Lower Parel, Mumbai')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="mumbai">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Andheri Creative Bay">
+                        <div class="location-badge">Mumbai</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Andheri Creative Bay</h3>
+                        <p class="location-address">Sahar Rd, Andheri East, Mumbai, Maharashtra 400069</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Creative Hub</span>
+                            <span class="feature-tag">Airport Access</span>
+                            <span class="feature-tag">24/7 Access</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Sahar Rd, Andheri East, Mumbai')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Delhi NCR Locations -->
+                <div class="location-tile" data-city="delhi">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Connaught Elite">
+                        <div class="location-badge">Delhi NCR</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Connaught Elite</h3>
+                        <p class="location-address">Connaught Place, New Delhi, Delhi 110001</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Heritage Location</span>
+                            <span class="feature-tag">Metro Access</span>
+                            <span class="feature-tag">Premium Amenities</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Connaught Place, New Delhi')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="delhi">
+                    <div class="location-image">
+                        <img src="gurgaon.avif" alt="Gurgaon Central">
+                        <div class="location-badge">Delhi NCR</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Gurgaon Central</h3>
+                        <p class="location-address">MG Road, DLF Phase 2, Gurugram, Haryana 122002</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Corporate Hub</span>
+                            <span class="feature-tag">Executive Lounges</span>
+                            <span class="feature-tag">Valet Parking</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('MG Road, DLF Phase 2, Gurugram')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="delhi">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Noida Sector 18 Work Loft">
+                        <div class="location-badge">Delhi NCR</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Noida Sector 18 Work Loft</h3>
+                        <p class="location-address">Sector 18, Noida, Uttar Pradesh 201301</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Tech District</span>
+                            <span class="feature-tag">Modern Interiors</span>
+                            <span class="feature-tag">Gaming Zone</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Sector 18, Noida, Uttar Pradesh')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="delhi">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="South Delhi Green Work">
+                        <div class="location-badge">Delhi NCR</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – South Delhi Green Work</h3>
+                        <p class="location-address">Hauz Khas Village, New Delhi, Delhi 110016</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Green Building</span>
+                            <span class="feature-tag">Artistic Vibe</span>
+                            <span class="feature-tag">Rooftop Terrace</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Hauz Khas Village, New Delhi')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="delhi">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dwarka Innovation Bay">
+                        <div class="location-badge">Delhi NCR</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Dwarka Innovation Bay</h3>
+                        <p class="location-address">Sector 21, Dwarka, New Delhi, Delhi 110075</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Innovation Hub</span>
+                            <span class="feature-tag">Startup Community</span>
+                            <span class="feature-tag">Event Spaces</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Sector 21, Dwarka, New Delhi')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Bengaluru Locations -->
+                <div class="location-tile" data-city="bengaluru">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="MG Road Hive">
+                        <div class="location-badge">Bengaluru</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – MG Road Hive</h3>
+                        <p class="location-address">MG Road, Bengaluru, Karnataka 560001</p>
+                        <div class="location-features">
+                            <span class="feature-tag">City Center</span>
+                            <span class="feature-tag">Metro Connectivity</span>
+                            <span class="feature-tag">Food Court</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('MG Road, Bengaluru, Karnataka')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="bengaluru">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Indiranagar Loft">
+                        <div class="location-badge">Bengaluru</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Indiranagar Loft</h3>
+                        <p class="location-address">100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Trendy Location</span>
+                            <span class="feature-tag">Café Culture</span>
+                            <span class="feature-tag">Creative Spaces</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('100 Feet Road, Indiranagar, Bengaluru')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="bengaluru">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Whitefield Tech Nest">
+                        <div class="location-badge">Bengaluru</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Whitefield Tech Nest</h3>
+                        <p class="location-address">ITPL Main Rd, Whitefield, Bengaluru, Karnataka 560066</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Tech Hub</span>
+                            <span class="feature-tag">IT Corridor</span>
+                            <span class="feature-tag">High-Speed Internet</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('ITPL Main Rd, Whitefield, Bengaluru')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="bengaluru">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Koramangala Start Hub">
+                        <div class="location-badge">Bengaluru</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Koramangala Start Hub</h3>
+                        <p class="location-address">5th Block, Koramangala, Bengaluru, Karnataka 560095</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Startup District</span>
+                            <span class="feature-tag">Networking Hub</span>
+                            <span class="feature-tag">Investor Meetings</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('5th Block, Koramangala, Bengaluru')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="bengaluru">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="HSR Creative Pod">
+                        <div class="location-badge">Bengaluru</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – HSR Creative Pod</h3>
+                        <p class="location-address">Sector 2, HSR Layout, Bengaluru, Karnataka 560102</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Creative Community</span>
+                            <span class="feature-tag">Design Studios</span>
+                            <span class="feature-tag">Art Gallery</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Sector 2, HSR Layout, Bengaluru')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Hyderabad Locations -->
+                <div class="location-tile" data-city="hyderabad">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="HITEC City Work Arena">
+                        <div class="location-badge">Hyderabad</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – HITEC City Work Arena</h3>
+                        <p class="location-address">HITEC City, Hyderabad, Telangana 500081</p>
+                        <div class="location-features">
+                            <span class="feature-tag">IT Hub</span>
+                            <span class="feature-tag">Corporate Facilities</span>
+                            <span class="feature-tag">Executive Services</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('HITEC City, Hyderabad, Telangana')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="hyderabad">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gachibowli Central">
+                        <div class="location-badge">Hyderabad</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Gachibowli Central</h3>
+                        <p class="location-address">Financial District, Gachibowli, Hyderabad, Telangana 500032</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Financial District</span>
+                            <span class="feature-tag">Premium Workspace</span>
+                            <span class="feature-tag">Business Center</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Financial District, Gachibowli, Hyderabad')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="hyderabad">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Banjara Hills Loft">
+                        <div class="location-badge">Hyderabad</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Banjara Hills Loft</h3>
+                        <p class="location-address">Road No. 12, Banjara Hills, Hyderabad, Telangana 500034</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Upscale Area</span>
+                            <span class="feature-tag">Luxury Amenities</span>
+                            <span class="feature-tag">Concierge Service</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Road No. 12, Banjara Hills, Hyderabad')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="hyderabad">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jubilee Hills Start Zone">
+                        <div class="location-badge">Hyderabad</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Jubilee Hills Start Zone</h3>
+                        <p class="location-address">Jubilee Hills, Hyderabad, Telangana 500096</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Startup Ecosystem</span>
+                            <span class="feature-tag">Mentorship Programs</span>
+                            <span class="feature-tag">Pitch Rooms</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Jubilee Hills, Hyderabad, Telangana')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="hyderabad">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Begumpet Work Lounge">
+                        <div class="location-badge">Hyderabad</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Begumpet Work Lounge</h3>
+                        <p class="location-address">Begumpet, Hyderabad, Telangana 500016</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Airport Access</span>
+                            <span class="feature-tag">Business Lounge</span>
+                            <span class="feature-tag">Conference Rooms</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Begumpet, Hyderabad, Telangana')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Pune Locations -->
+                <div class="location-tile" data-city="pune">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Koregaon Park Luxe">
+                        <div class="location-badge">Pune</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Koregaon Park Luxe</h3>
+                        <p class="location-address">Lane 7, Koregaon Park, Pune, Maharashtra 411001</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Premium Location</span>
+                            <span class="feature-tag">Luxury Interiors</span>
+                            <span class="feature-tag">Wellness Center</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Lane 7, Koregaon Park, Pune')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="pune">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hinjawadi Prime">
+                        <div class="location-badge">Pune</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Hinjawadi Prime</h3>
+                        <p class="location-address">Phase 1, Hinjawadi, Pune, Maharashtra 411057</p>
+                        <div class="location-features">
+                            <span class="feature-tag">IT Park</span>
+                            <span class="feature-tag">Tech Community</span>
+                            <span class="feature-tag">Innovation Labs</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Phase 1, Hinjawadi, Pune, Maharashtra')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="pune">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Baner Heights">
+                        <div class="location-badge">Pune</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Baner Heights</h3>
+                        <p class="location-address">Baner Road, Baner, Pune, Maharashtra 411045</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Corporate Hub</span>
+                            <span class="feature-tag">Sky Lounge</span>
+                            <span class="feature-tag">Fitness Center</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Baner Road, Baner, Pune, Maharashtra')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="pune">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kharadi Work Loft">
+                        <div class="location-badge">Pune</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Kharadi Work Loft</h3>
+                        <p class="location-address">Kharadi, Pune, Maharashtra 411014</p>
+                        <div class="location-features">
+                            <span class="feature-tag">IT Corridor</span>
+                            <span class="feature-tag">Modern Design</span>
+                            <span class="feature-tag">Collaboration Spaces</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Kharadi, Pune, Maharashtra')">View on Map</button>
+                        <button onclick="openBooking()"class="location-book-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="location-tile" data-city="pune">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aundh Studio Bay">
+                        <div class="location-badge">Pune</div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-name">The WorkTribe – Aundh Studio Bay</h3>
+                        <p class="location-address">Aundh, Pune, Maharashtra 411007</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Creative Studios</span>
+                            <span class="feature-tag">Artist Community</span>
+                            <span class="feature-tag">Exhibition Space</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="location-map-btn" onclick="openMap('Aundh, Pune, Maharashtra')">View on Map</button>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra Benefits Section -->
+    <section class="extra-benefits">
+        <div class="container">
+            <h2 class="section-title">Extra WorkTribe Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🕐</div>
+                    <h3 class="benefit-title">24/7 Access</h3>
+                    <p class="benefit-description">Available at select locations for maximum flexibility</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">☕</div>
+                    <h3 class="benefit-title">Fully Equipped Kitchens</h3>
+                    <p class="benefit-description">Coffee bars and kitchen facilities in every location</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛠️</div>
+                    <h3 class="benefit-title">On-site Support Teams</h3>
+                    <p class="benefit-description">Dedicated staff to help with all your needs</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📶</div>
+                    <h3 class="benefit-title">Secure, High-Speed Wi-Fi</h3>
+                    <p class="benefit-description">Enterprise-grade internet connectivity</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🖨️</div>
+                    <h3 class="benefit-title">Printing & Scanning</h3>
+                    <p class="benefit-description">Complete document services and facilities</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <h3 class="benefit-title">Community Events</h3>
+                    <p class="benefit-description">Networking opportunities and professional development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">WorkTribe</h3>
+                    <p class="footer-description">Making life work. Workspace, community, and services for creators and businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Workspace</h4>
+                    <ul class="footer-links">
+                        <li><a href="officespace.html" class="footer-link">Office spaces</a></li>
+                        <li><a href="coworking.html" class="footer-link">Coworking Spaces</a></li>
+                    
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Worktribe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function navigateHome() {
+            window.location.href = 'index2.html';
+        }
+
+        function navigateToCoworking(event) {
+            if (event) event.preventDefault();
+            window.location.href = 'coworking.html';
+        }
+
+        // Mobile navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Mobile dropdown handling
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Search functionality
+        function searchLocations() {
+            const citySelect = document.getElementById('city-select');
+            const dateSelect = document.getElementById('date-select');
+            const selectedCity = citySelect.value;
+            const selectedDate = dateSelect.value;
+            
+            const locationTiles = document.querySelectorAll('.location-tile');
+            let visibleCount = 0;
+            
+            locationTiles.forEach(tile => {
+                const tileCity = tile.getAttribute('data-city');
+                let shouldShow = true;
+                
+                if (selectedCity && tileCity !== selectedCity) {
+                    shouldShow = false;
+                }
+                
+                if (shouldShow) {
+                    tile.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    tile.style.display = 'none';
+                }
+            });
+            
+            // Update location count
+            document.getElementById('location-count').textContent = visibleCount;
+            
+            // Show search results message
+            if (selectedCity || selectedDate) {
+                const cityName = selectedCity ? citySelect.options[citySelect.selectedIndex].text : 'All Cities';
+                const dateText = selectedDate ? ` for ${selectedDate}` : '';
+                console.log(`Showing ${visibleCount} locations in ${cityName}${dateText}`);
+            }
+        }
+
+        // Map functionality
+        function openMap(address) {
+            const encodedAddress = encodeURIComponent(address);
+            const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+            window.open(mapUrl, '_blank');
+        }
+
+        // Booking functionality
+        function openBooking() {
+            window.location.href = "booking.html";
+        }
+
+        
+    </script>
+</body>
+</html>

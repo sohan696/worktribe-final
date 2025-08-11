@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeWork - Made for work. Built for business.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="LOGOMAIN.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1 class="logo" onclick="navigateHome()">WorkTribe.</h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-item dropdown" id="workspace-dropdown">
+                    <a href="#workspace" class="nav-link dropdown-toggle">
+                        Workspace
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="officespace.html" class="dropdown-item">Office Spaces</a>
+                        <a href="coworking.html" class="dropdown-item">Coworking Spaces</a>
+                    
+                    </div>
+                </div>
+                
+            
+                <a href="locations.html" class="nav-link locations-link">Locations</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+
+            </div>
+            <div class="nav-cta">
+                <a href="host.html" class="nav-link btn">Host Space</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+   
+
+            <!-- Hero Section -->
+            <section class="hero" id="hero">
+                <div class="hero-background">
+                    <img src="Officerooms.jpg" alt="Modern coworking space" class="hero-image">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title" style="color: white;">Book Office Spaces Boost Productivity Anytime Everywhere</h1>
+                    <p class="hero-subtitle">Home to a thousand members around the country, from entrepreneurs to global enterprises. Find out about our flexible office workplace solutions for you.</p>
+                    <div class="hero-ctas">
+                        <button class="btn btn-primary-large" onclick="window.location.href='locations.html'">Find Your Space</button>
+                        <button class="btn btn-secondary-large">Learn More</button>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+
+            <!-- Services Section -->
+            <section class="services" id="workspace">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Workspace made simple</h2>
+                        <p class="section-subtitle">Choose from flexible options designed to fit your business needs</p>
+                    </div>
+                    <div class="services-grid" style="pointer-events: none; cursor: default;" 
+  onclick="event.preventDefault(); event.stopPropagation();">
+                        <div class="service-card" data-service="private-office">
+                            <div class="service-icon">🏢</div>
+                            <h3 class="service-title">Private Workspace</h3>
+                            <p class="service-description">Furnished offices for teams of any size including whiteboards and system as per the requirements of companies. People can collaborate and choose the amount of people they need to accomodate through prior notice.People will be facilitated with internet within the time.</p>
+                            
+                            <div class="service-image">
+                                <img src="Officeroomss.jpg" alt="Private Office Space">
+                            </div>
+                        </div>
+                        
+                        <div class="service-card" data-service="coworking" onclick="navigateToCoworking()">
+                            <div class="service-icon">💻</div>
+                            <h3 class="service-title">Coworking Access</h3>
+                            <p class="service-description">Shared workspaces with professional amenities, people can choose based on their requirements. Multiple tables can be arranged according to the requirements of the person booking. Shared workspace comes with complimentary cafes</p>
+                            
+                            <div class="service-image">
+                                <img src="cowork.jpg" alt="Coworking Space">
+                            </div>
+                        </div>
+                         <div class="service-card" data-service="coworking" onclick="navigateToCoworking()">
+                            <div class="service-icon">🏢 </div>
+                            <h3 class="service-title">Board Room</h3>
+                            <p class="service-description">A dedicated meeting space equipped with a large table, comfortable seating, and presentation tools, where executives and decision-makers gather to discuss strategies and make key business decisions. Special services can be chosen with prior notice.</p>
+                           
+                            <div class="service-image">
+                                <img src="hotdesk.jpg" alt="Coworking Space">
+                            </div>
+                        </div>
+                         <div class="service-card" data-service="coworking" onclick="navigateToCoworking()">
+                            <div class="service-icon">📅</div>
+                            <h3 class="service-title">Meeting Rooms</h3>
+                            <p class="service-description">Reserve private meeting spaces equipped with high-definition video conferencing, whiteboards, and presentation tools ideal for team collaborations.</p>
+                           
+                            <div class="service-image">
+                                <img src="meetingroom.avif" alt="Coworking Space">
+                            </div>
+                        </div>
+                         <div class="service-card" data-service="coworking" onclick="navigateToCoworking()">
+                            <div class="service-icon">☕</div>
+                            <h3 class="service-title">Cafe & Lounge access</h3>
+                            <p class="service-description">Recharge and network in stylish lounge areas with unlimited coffee, tea, snacks, and a relaxed atmosphere designed for casual conversations and creative thinking.</p>
+                            
+                            <div class="service-image">
+                                <img src="cafe.jpg" alt="Coworking Space">
+                            </div>
+                        </div>
+                        
+                        <div class="service-card" data-service="enterprise">
+                            <div class="service-icon">🏗️</div>
+                            <h3 class="service-title">Enterprise Solutions</h3>
+                            <p class="service-description">We provide flexible, fully scalable real estate solutions designed to adapt to the evolving needs of leading companies. Companies can book multiple workspace for meetings.</p>
+                            <div class="service-image">
+                                <img src="enterprise.jpg" alt="Enterprise Solutions">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Membership Plans -->
+            <section class="membership-plans" id="membership-plans">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Choose your plan</h2>
+                        <p class="section-subtitle">Flexible membership options to match your work style</p>
+                    </div>
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Private Office</h3>
+                                <div class="plan-price">
+                                    <span class="price">₹4999</span>
+                                    <span class="period">per month onwards</span>
+                                </div>
+                                <p class="plan-description">Private workspace with private desks</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Access to common areas</li>
+                                <li>High-speed WiFi</li>
+                                <li>Printing credits included</li>
+                                <li>Coffee and tea</li>
+                                <li>Community support</li>
+                            </ul>
+                            <button class="btn btn-primary-large" onclick="window.location.href='locations.html'">Get Started</button>
+                        </div>
+                        
+                        <div class="plan-card popular">
+                            <div class="plan-badge">Most Popular</div>
+                            <div class="plan-header">
+                                <h3 class="plan-name">Shared Office</h3>
+                                <div class="plan-price">
+                                    <span class="price">₹2999</span>
+                                    <span class="period">per month onwards</span>
+                                </div>
+                                <p class="plan-description">Your own desk in a shared workspace</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>shared desk</li>
+                                <li>Storage space</li>
+                                <li>24/7 access</li>
+                                <li>Meeting room credits</li>
+                                <li>Phone booth access</li>
+                                <li>Shared cafe and lounge</li>
+                            </ul>
+                            <button class="btn btn-primary-large" onclick="window.location.href='locations.html'">Get Started</button>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Board Room</h3>
+                                <div class="plan-price">
+                                    <span class="price">₹7999</span>
+                                    <span class="period">per month onwards</span>
+                                </div>
+                                <p class="plan-description">Private workspace including board room</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Lockable private rooms</li>
+                                <li>Cafe services as per request</li>
+                                <li>Unlimited internet connection</li>
+                                <li>Dedicated phone line</li>
+                                <li>Customizable wallpaer</li>
+                                <li>Priority support</li>
+                            </ul>
+                            <button class="btn btn-primary-large" onclick="window.location.href='locations.html'">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Frequently asked questions</h2>
+                        <p class="section-subtitle">Get answers to common questions about our coworking spaces</p>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is there access to refreshments or a café?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutely. You’ll have access to our lounge and café areas with complimentary coffee, tea, water, and light snacks throughout the day.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is there 24/7 access to the coworking office?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Select plans include round-the-clock access with secure entry systems, so you can work whenever it suits your schedule.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I bring guests to the workspace?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, members can bring guests for day passes. Guest policies may vary by location, so check with your local community team.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What additional office amenities are included?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Depending on your booking, you may have access to printing/scanning facilities, lockers, mail handling services, and event spaces.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What safety and security measures are in place?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our coworking spaces feature secure access control, CCTV surveillance, on-site staff, and regular cleaning protocols. We also provide fire safety equipment, emergency exits, and first-aid facilities to ensure a safe and comfortable work environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact" id="contact">
+                <div class="container">
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Let us find a solution that works for you</h2>
+                            <p class="contact-description">Ready to get started? Our team will help you find the perfect workspace solution for your business needs.</p>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <h4>📧 Email us</h4>
+                                    <p>information@worktribe.com</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>📞 Call us</h4>
+                                    <p>+91-8940891677</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>🌍 Global presence</h4>
+                                    <p>Available in 5+ cities worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company</label>
+                                <input type="text" id="company" name="company" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">How can we help?</label>
+                                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-large btn-full-width">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        
+<script src="app.js"></script>
+<script>
+  // Override global to return to the main landing page from this standalone file
+  function navigateHome() {
+    window.location.href = 'index2.html';
+  }
+</script>
+ <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">WorkTribe</h3>
+                    <p class="footer-description">Making life work. Workspace, community, and services for creators and businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Workspace</h4>
+                    <ul class="footer-links">
+                        <li><a href="officespace.html" class="footer-link">Office spaces</a></li>
+                        <li><a href="coworking.html" class="footer-link">Coworking Spaces</a></li>
+                    
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Worktribe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

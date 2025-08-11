@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worktribe - Host Your Perfect Workspace</title>
+    <link rel="stylesheet" href="host.css">
+    <link rel="icon" type="image/png" href="LOGOMAIN.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index2.html"><h2>WorkTribe</h2></a>
+            </div>
+            <div class="nav-menu">
+                <button class="become-host-btn" id="becomeHostBtn">Become a Host</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="hero-section">
+            <h1>Host Your Perfect Workspace</h1>
+            <p>Host Amazing Workspaces. <br> Build Amazing Connections.</p>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Become a Host</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="currentStep">1</span> of 7
+                </div>
+            </div>
+
+            <!-- Form Steps -->
+            <div class="form-container" id="formContainer">
+                
+                <!-- Step 1: What would you like to host? -->
+                <div class="step active" id="step1">
+                    <h3>What would you like to host?</h3>
+                    <div class="options-grid">
+                        <button class="option-btn" data-value="office-space">
+                            <div class="option-icon">🏢</div>
+                            <div class="option-text">Office Space</div>
+                        </button>
+                        <button class="option-btn" data-value="coworking">
+                            <div class="option-icon">💼</div>
+                            <div class="option-text">Coworking</div>
+                        </button>
+                        <button class="option-btn" data-value="virtual-offices">
+                            <div class="option-icon">💻</div>
+                            <div class="option-text">Virtual Offices</div>
+                        </button>
+                        <button class="option-btn" data-value="meeting-rooms">
+                            <div class="option-icon">🏛️</div>
+                            <div class="option-text">Meeting Rooms</div>
+                            <div class="option-subtitle">Interview Room, Training Room, Board Room, Event Hall</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Login/Sign up -->
+                <div class="step" id="step2">
+                    <h3>Login or Sign Up</h3>
+                    <div class="form-group">
+                        <label for="contact">Email or Phone Number</label>
+                        <input type="text" id="contact" placeholder="Enter your email or phone number">
+                    </div>
+                    <button class="google-btn" type="button">
+                        <span class="google-icon">G</span>
+                        Continue with Google
+                    </button>
+                </div>
+
+                <!-- Step 3: Choose option -->
+                <div class="step" id="step3">
+                    <h3>What would you like to do?</h3>
+                    <div class="choice-container">
+                        <button class="choice-btn" data-value="new-listing">
+                            <div class="choice-icon">➕</div>
+                            <div class="choice-text">Create a New Listing</div>
+                        </button>
+                        <button class="choice-btn" data-value="manage-existing">
+                            <div class="choice-icon">⚙️</div>
+                            <div class="choice-text">Manage Existing Listing</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Tell us about your place -->
+                <div class="step" id="step4">
+                    <h3>Tell us about your place</h3>
+                    <div class="form-group">
+                        <label>Type of space:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="spaceType" value="room">
+                                <span class="radio-text">Room</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="spaceType" value="hall">
+                                <span class="radio-text">Hall</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="spaceType" value="entire-building">
+                                <span class="radio-text">Entire Building</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="spaceType" value="office-floor">
+                                <span class="radio-text">Office Floor</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" rows="4" placeholder="Tell us more about your space..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Step 5: Location -->
+                <div class="step" id="step5">
+                    <h3>Where is your place located?</h3>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" placeholder="Enter your full address">
+                    </div>
+                    <div class="map-placeholder">
+                        <div class="map-icon">📍</div>
+                        <p>Google Map integration would be placed here</p>
+                    </div>
+                </div>
+
+                <!-- Step 6: Amenities -->
+                <div class="step" id="step6">
+                    <h3>What amenities do you offer?</h3>
+                    <div class="amenities-grid">
+                        <label class="amenity-option">
+                            <input type="checkbox" value="charging-ports">
+                            <span class="amenity-text">🔌 Charging Ports</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="nap-pods">
+                            <span class="amenity-text">😴 Nap Pods</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="wifi">
+                            <span class="amenity-text">📶 WiFi</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="washrooms">
+                            <span class="amenity-text">🚻 Washrooms</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="cafe-inside">
+                            <span class="amenity-text">☕ Café Inside</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="nearby-food">
+                            <span class="amenity-text">🍕 Nearby Food Places</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="ac">
+                            <span class="amenity-text">❄️ AC</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="cooler-fans">
+                            <span class="amenity-text">🌀 Cooler/Fans</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="reclining-chairs">
+                            <span class="amenity-text">🪑 Reclining Chairs</span>
+                        </label>
+                        <label class="amenity-option">
+                            <input type="checkbox" value="couches">
+                            <span class="amenity-text">🛋️ Couches</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 7: Final details -->
+                <div class="step" id="step7">
+                    <h3>Final Details</h3>
+                    <div class="form-group">
+                        <label for="images">Upload Images</label>
+                        <input type="file" id="images" multiple accept="image/*">
+                        <div class="file-hint">You can select multiple images</div>
+                    </div>
+                    <div class="time-group">
+                        <div class="form-group">
+                            <label for="openingTime">Opening Time</label>
+                            <input type="time" id="openingTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="closingTime">Closing Time</label>
+                            <input type="time" id="closingTime">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="whyJoin">Why do you want to join us?</label>
+                        <textarea id="whyJoin" rows="4" placeholder="Tell us your motivation..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Confirmation Screen -->
+                <div class="step" id="confirmation" style="display: none;">
+                    <div class="confirmation-content">
+                        <div class="success-icon">✅</div>
+                        <h3>Thank you!</h3>
+                        <p>Your listing will be reviewed. After verification, it will be live.</p>
+                        <button class="primary-btn" id="doneBtn">Done</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="modal-footer">
+                <button class="secondary-btn" id="backBtn" style="display: none;">Back</button>
+                <button class="primary-btn" id="nextBtn" disabled>Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="host.js"></script>
+</body>
+</html>

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeWork - Made for work. Built for business.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="LOGOMAIN.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1 class="logo" onclick="navigateHome()">WorkTribe.</h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-item dropdown" id="workspace-dropdown">
+                    <a href="#workspace" class="nav-link dropdown-toggle">
+                        Workspace
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="officespace.html" class="dropdown-item">Office Spaces</a>
+                        <a href="coworking.html" class="dropdown-item">Coworking Spaces</a>
+                    
+                    </div>
+                </div>
+                
+            
+                <a href="locations.html" class="nav-link locations-link">Locations</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+
+            </div>
+            <div class="nav-cta">
+                <a href="host.html" class="nav-link btn">Host Space</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+        <!-- Homepage Content -->
+        <div id="homepage" class="page-content active">
+            
+
+            <!-- Hero Section -->
+            <section class="hero" id="hero">
+                <div class="hero-background">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/9ad3f36ad39096736024475a597d76e3cf063632.jpg" alt="Modern coworking space" class="hero-image">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title" style="color: white">Made for work. Built for business.</h1>
+                    <p class="hero-subtitle">Home to half a million members around the world, from entrepreneurs to global enterprises. Find out how our flexible office solutions can work for you.</p>
+                    <div class="hero-ctas">
+                        <button class="btn btn-primary-large" onclick="window.location.href='locations.html'">Find Your Space</button>
+
+                        <button class="btn btn-secondary-large">Learn More</button>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+                        <!-- Services Section -->
+                <section class="services" id="workspace">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">The Worktribe.</h2>
+                            <p class="section-subtitle">Coworking spaces and Office Space Solutions Across Metro India.</p>
+                        </div>
+
+                        <!-- Filter Tabs -->
+                        <div class="services-filter-tabs">
+                            <button class="services-filter-tab active" data-services-filter="office-space">Office Space</button>
+                            <button class="services-filter-tab" data-services-filter="coworking">Coworking</button>
+                        </div>
+
+                        <!-- Services Grid -->
+                        <div class="services-grid" id="services-content-grid">
+                            <!-- Office Space Cards -->
+                            <div class="service-card active" data-services-category="office-space">
+                                
+                                <h3 class="service-title">Private Offices</h3>
+                                <p class="service-description">Fully furnished, lockable spaces ready from day one. Designed for teams of any size, with ergonomic furniture, high-speed internet, and secure access.</p>
+                                <div class="service-features">
+                                    <span> Secure Access</span>
+                                    <span> Fully Furnished</span>
+                                    <span> High-Speed Internet</span>
+                                </div>
+                                <a href="officespace.html" style="display: inline-block; color: var(--wework-black);
+                                font-weight: 600;
+                                text-decoration: none;
+                                margin-bottom: var(--spacing-lg);
+                                transition: color var(--transition-fast);
+                                position: relative;
+                                color: #007bff;
+                                ">Learn More</a>
+                                <div class="service-image">
+                                    <img src="https://pplx-res.cloudinary.com/image/upload/v1753161867/pplx_project_search_images/96d2506adfe2f4f7a7dbced38b3220c8730c3db6.jpg" alt="Private Office Space">
+                                </div>
+                            </div>
+
+                            <div class="service-card active" data-services-category="office-space">
+                                
+                                <h3 class="service-title">Custom Offices</h3>
+                                <p class="service-description">Shape every detail to fit your brand — layout, furniture, colors, and signage. Perfect for growing companies who want their space to speak their identity.</p>
+                                <div class="service-features">
+                                    <span> Custom Design</span>
+                                    <span> Brand Identity</span>
+                                    <span> Flexible Layout</span>
+                                </div>
+                                <a href="officespace.html" style="display: inline-block; color: var(--wework-black);
+                                font-weight: 600;
+                                text-decoration: none;
+                                margin-bottom: var(--spacing-lg);
+                                transition: color var(--transition-fast);
+                                position: relative;
+                                color: #007bff;
+                                ">Learn More</a>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="service-image">
+                                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/7ccc43b74a0e30790bcc6ec2d32cb4737cb4f11f.jpg" alt="Custom Office Space">
+                                </div>
+                            </div>
+
+                            <div class="service-card active" data-services-category="office-space">
+                                
+                                <h3 class="service-title">Day Offices</h3>
+                                <p class="service-description">On-demand, professional offices you can book by the hour or day. Great for short-term projects or when you're working away from your HQ.</p>
+                                <div class="service-features">
+                                    <span> Hourly Booking</span>
+                                    <span> On-Demand</span>
+                                    <span> Professional</span>
+                                </div>
+                                <a href="officespace.html" style="display: inline-block; color: var(--wework-black);
+                                font-weight: 600;
+                                text-decoration: none;
+                                margin-bottom: var(--spacing-lg);
+                                transition: color var(--transition-fast);
+                                position: relative;
+                                color: #007bff;
+                                ">Learn More</a>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="service-image">
+                                    <img src="assets/coworkingspaces.webp" alt="Day Office Space">
+                                </div>
+                            </div>
+
+                           
+
+                            <!-- Coworking Cards -->
+                            <div class="service-card" data-services-category="coworking">
+                                
+                                <h3 class="service-title">Dedicated Desk</h3>
+                                <p class="service-description">Your personal, reserved workstation in a shared office. Includes lockable storage, business address, and meeting room credits.</p>
+                                <div class="service-features">
+                                    <span> Lockable Storage</span>
+                                    <span> Business Address</span>
+                                    <span> Meeting Credits</span>
+                                </div>
+                                <a href="coworking.html" style="display: inline-block; color: var(--wework-black);
+                                font-weight: 600;
+                                text-decoration: none;
+                                margin-bottom: var(--spacing-lg);
+                                transition: color var(--transition-fast);
+                                position: relative;
+                                color: #007bff;
+                                ">Learn More</a>
+                                <div class="service-image">
+                                    <img src="assets/hot-desk.webp" alt="Dedicated Desk">
+                                </div>
+                            </div>
+
+                            <div class="service-card" data-services-category="coworking">
+                                
+                                <h3 class="service-title">Day Coworking</h3>
+                                <p class="service-description">Grab any available desk in our open-plan area, for a few hours or a full day. Just walk in, plug in, and get started.</p>
+                                <div class="service-features">
+                                    <span> Walk-in Ready</span>
+                                    <span> Plug & Play</span>
+                                    <span> Instant Access</span>
+                                </div>
+                                <a href="coworking.html" style="display: inline-block; color: var(--wework-black);
+                                font-weight: 600;
+                                text-decoration: none;
+                                margin-bottom: var(--spacing-lg);
+                                transition: color var(--transition-fast);
+                                position: relative;
+                                color: #007bff;
+                                ">Learn More</a>
+                                <br>
+                                <br>
+
+                                <div class="service-image">
+                                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/35c570917e874e6502f2129aef5bb283a116758b.jpg" alt="Day Coworking">
+                                </div>
+                            </div>
+
+                            <div class="service-card" data-services-category="coworking">
+                                
+                                <h3 class="service-title">Coworking Membership</h3>
+                                <p class="service-description">Flexible plans for 5, 10, or unlimited coworking days per month. Perfect for freelancers, startups, and hybrid teams.</p>
+                                <div class="service-features">
+                                    <span> Monthly Plans</span>
+                                    <span> Community Access</span>
+                                    <span> Flexible Days</span>
+                                </div>
+                                <a href="coworking.html" style="display: inline-block; color: var(--wework-black);
+                                font-weight: 600;
+                                text-decoration: none;
+                                margin-bottom: var(--spacing-lg);
+                                transition: color var(--transition-fast);
+                                position: relative;
+                                color: #007bff;
+                                ">Learn More</a>
+                                <div class="service-image">
+                                    <img src="assets/private-office.webp" alt="Coworking Membership">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <style>
+                /* Filter Tabs Styles */
+                .services-filter-tabs {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 2rem;
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    padding: 4px;
+                    max-width: 400px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .services-filter-tab {
+                    flex: 1;
+                    padding: 12px 24px;
+                    border: none;
+                    background: transparent;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    color: #6c757d;
+                    border-radius: 6px;
+                }
+
+                .services-filter-tab:hover {
+                    background: #e9ecef;
+                    color: #495057;
+                }
+
+                .services-filter-tab.active {
+                    background: white;
+                    color: #007bff;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                }
+
+                /* Service Card Updates */
+                .service-card {
+                    display: none;
+                    position: relative;
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                    transition: all 0.3s ease;
+                    overflow: hidden;
+                    padding: 2rem;
+                }
+
+                .service-card.active {
+                    display: block;
+                }
+
+                .service-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+                }
+
+                .service-features {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin: 1rem 0;
+                }
+
+                .service-features span {
+                    background: #f8f9fa;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    font-size: 0.85em;
+                    color: #495057;
+                    border: 1px solid #e9ecef;
+                }
+
+                .service-link {
+                    display: inline-flex;
+                    align-items: center;
+                    color: #007bff;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.95em;
+                    margin-bottom: 1rem;
+                    transition: all 0.3s ease;
+                }
+
+                .service-link:hover {
+                    color: #0056b3;
+                    transform: translateX(2px);
+                }
+
+                .service-link::after {
+                    content: '→';
+                    margin-left: 8px;
+                    transition: transform 0.3s ease;
+                }
+
+                .service-link:hover::after {
+                    transform: translateX(2px);
+                }
+
+                .service-image {
+                    margin-top: 1rem;
+                    border-radius: 8px;
+                    overflow: hidden;
+                }
+
+                .service-image img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                }
+
+                .service-card:hover .service-image img {
+                    transform: scale(1.05);
+                }
+
+                @media (max-width: 768px) {
+                    .services-filter-tabs {
+                        flex-direction: column;
+                        max-width: none;
+                    }
+                    
+                    .services-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .service-card {
+                        padding: 1.5rem;
+                    }
+                }
+                </style>
+
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const filterTabs = document.querySelectorAll('.services-filter-tab');
+                    const serviceCards = document.querySelectorAll('.service-card');
+
+                    filterTabs.forEach(tab => {
+                        tab.addEventListener('click', function() {
+                            const filter = this.getAttribute('data-services-filter');
+                            
+                            // Update active tab
+                            filterTabs.forEach(t => t.classList.remove('active'));
+                            this.classList.add('active');
+                            
+                            // Filter cards
+                            serviceCards.forEach(card => {
+                                const category = card.getAttribute('data-services-category');
+                                if (category === filter) {
+                                    card.classList.add('active');
+                                } else {
+                                    card.classList.remove('active');
+                                }
+                            });
+                        });
+                    });
+                });
+                
+                document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    });
+});
+
+
+                </script>
+<br>
+<br>
+                <h2 class="trusted-title" style="text-align: center;">Trust and Security features across Worktribe Locations.</h2>
+
+               <!-- Slideshow Section -->
+<section class="slideshow-section">
+  <div class="slideshow-container">
+    <div class="slide active">
+      <div class="slide-image">
+        <img src="assets/slideshow1.png" alt="Modern workspace">
+      </div>
+      <div class="slide-content">
+        <h2 class="slide-title" style="color: white;">Women's Safety Standards</h2>
+        <p class="slide-location">Worktribe offers verified, women-friendly spaces with CCTV, secure access, and a zero-tolerance safety policy for a trusted booking experience.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-image">
+        <img src="assets/slideshow2.png" alt="Private office space">
+      </div>
+      <div class="slide-content">
+        <h2 class="slide-title" style="color: black;">Workplace Safety Standards</h2>
+        <p class="slide-location" style="color: black;">Our spaces meet strict safety standards with fire compliance, hygiene checks, secure access, and reliable amenities for a safe, comfortable experience.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-image">
+        <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/7ccc43b74a0e30790bcc6ec2d32cb4737cb4f11f.jpg" alt="Meeting rooms">
+      </div>
+      <div class="slide-content">
+        <h2 class="slide-title" style="color: white;">Verified Listers</h2>
+        <p class="slide-location">All listers undergo strict verification, including ID checks, business registration, and ownership proof, ensuring only trusted spaces are listed on Worktribe.</p>
+      </div>
+    </div>
+
+    <!-- Place arrows here (once) -->
+    <button class="prev" aria-label="Previous slide">&#10094;</button>
+    <button class="next" aria-label="Next slide">&#10095;</button>
+  </div>
+</section>
+
+                
+                <!-- Navigation Dots -->
+                <div class="slideshow-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                
+                <!-- Book a Tour Button -->
+                <div class="book-tour-btn">
+                    <a href="contact.html">Book a tour</a>
+                </div>
+            </section>
+            <!-- Partners Trusted -->
+            <hr>
+            <section class="trusted-section">
+                    <div class="container">
+                        <h2 class="trusted-title">Trusted by the world's largest companies<span class="dot">.</span></h2>
+                        
+                        <div class="companies-grid">
+                            <div class="company-logo microsoft">Microsoft</div>
+                            <div class="company-logo paypal"><span class="pay">Pay</span>Pal</div>
+                            <div class="company-logo fedex"><span class="fed">Fed</span><span class="ex">Ex</span></div>
+                            <div class="company-logo samsung">SAMSUNG</div>
+                            <div class="company-logo spotify">Spotify</div>
+                            <div class="company-logo mcafee">McAfee</div>
+                        </div>
+                    </div>
+                </section>
+
+            <script>
+                // Filter functionality
+                const filterTabs = document.querySelectorAll('.filter-tab');
+                const workspaceCards = document.querySelectorAll('.workspace-card');
+
+                filterTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        // Remove active class from all tabs
+                        filterTabs.forEach(t => t.classList.remove('active'));
+                        // Add active class to clicked tab
+                        tab.classList.add('active');
+
+                        const filter = tab.dataset.filter;
+
+                        // Hide all cards
+                        workspaceCards.forEach(card => {
+                            card.classList.remove('active');
+                            if (card.dataset.category === filter) {
+                                card.classList.add('active');
+                            }
+                        });
+                    });
+                });
+
+                // About section navigation
+                const aboutNavBtns = document.querySelectorAll('.about-nav-btn');
+                const aboutPages = document.querySelectorAll('.about-page');
+
+                aboutNavBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        aboutNavBtns.forEach(b => b.classList.remove('active'));
+                        // Add active class to clicked button
+                        btn.classList.add('active');
+
+                        const page = btn.dataset.page;
+
+                        // Hide all pages
+                        aboutPages.forEach(p => p.classList.remove('active'));
+                        // Show selected page
+                        document.getElementById(page).classList.add('active');
+                    });
+                });
+            </script>
+            </body>
+            <!-- About Section -->
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2 class="about-title">Reimagining the workplace</h2>
+                            <p class="about-description">We provide companies and individuals with flexible workspace, community, and services so you can focus on doing what you love. Make life work.</p>
+                            <div class="about-stats">
+                                <div class="stat">
+                                    <h3 class="stat-number">50k+</h3>
+                                    <p class="stat-label">Corporate Members</p>
+                                </div>
+                                <div class="stat">
+                                    <h3 class="stat-number">25+</h3>
+                                    <p class="stat-label">Locations India wide.</p>
+                                </div>
+                                <div class="stat">
+                                    <h3 class="stat-number">5+</h3>
+                                    <p class="stat-label">Cities</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/a7a37e65d52048ad4769aeede116def4285b6c7d.jpg" alt="Modern workspace environment">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Certificate Section -->
+            <section class="awards">
+                <h2 style="
+                    font-size: clamp(2rem, 4vw, 2.5rem);
+                    font-weight: 700;
+                    color: var(--wework-black);
+                    margin-bottom: var(--spacing-lg);
+                    letter-spacing: -0.02em;
+                ">Awards and Certifications</h2>
+                <div class="awards-container">
+                    <div class="award">
+                        <img src="award1.png" alt="Co-working Brand of the Year">
+                        <p>WorkTribe India - Co-working Brand of the Year</p>
+                    </div>
+                    <div class="award">
+                        <img src="award2.png" alt="Most Environmentally Conscious Brand">
+                        <p>WorkTribe India - Most Environmentally Conscious Brand</p>
+                    </div>
+                    <div class="award">
+                        <img src="award3.png" alt="Great Place to Work Certified">
+                        <p>Great Place to Work-Certified</p>
+                    </div>
+                    <div class="award">
+                        <img src="award4.png" alt="Best Organisation for Women Empowerment">
+                        <p>WorkTribe India - Best Organisation for Women Empowerment</p>
+                    </div>
+                    <div class="award">
+                        <img src="assets/iso 27001.png" alt="ISO 27001 Certified">
+                        <p>ISO 27001 Certified</p>
+                    </div>
+                    <div class="award">
+                        <img src="assets/pci dss.jpeg" alt="pci dss">
+                        <p>PCI DSS Certified</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact" id="contact">
+                <div class="container">
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Let us find a solution that works for you</h2>
+                            <p class="contact-description">Ready to get started? Our team will help you find the perfect workspace solution for your business needs.</p>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <h4>Email us</h4>
+                                    <p>hello@worktribe.com</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>Call us</h4>
+                                    <p>+91-8940891677</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h4>Global presence</h4>
+                                    <p>Available in 5+ cities worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company" class="form-label">Company</label>
+                                <input type="text" id="company" name="company" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">How can we help?</label>
+                                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-large btn-full-width">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+        <!-- Coworking Spaces Page -->
+        <div id="coworking-page" class="page-content">
+            <!-- Coworking Hero Section -->
+            <section class="coworking-hero">
+                <div class="hero-background">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/35c570917e874e6502f2129aef5bb283a116758b.jpg" alt="Coworking Space" class="hero-image">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Coworking Spaces</h1>
+                    <p class="hero-subtitle">Join a vibrant community of entrepreneurs, freelancers, and growing companies in our flexible shared workspaces designed to inspire productivity and collaboration.</p>
+                    <div class="hero-ctas">
+                        <button class="btn btn-primary-large" onclick="scrollToSection('coworking-locations')">Find a Location</button>
+                        <button class="btn btn-secondary-large" onclick="scrollToSection('membership-plans')">View Plans</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="coworking-benefits">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Why choose WeWork coworking?</h2>
+                        <p class="section-subtitle">Everything you need to do your best work, plus the community to inspire it</p>
+                    </div>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h3 class="benefit-title">Global Network</h3>
+                            <p class="benefit-description">Access 800+ locations worldwide with your membership</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h3 class="benefit-title">Networking Events</h3>
+                            <p class="benefit-description">Connect with entrepreneurs and professionals in your industry</p>
+                        </div>
+                        <div class="benefit-card">
+
+                            <h3 class="benefit-title">Flexible Plans</h3>
+                            <p class="benefit-description">Choose from daily, monthly, or annual membership options</p>
+                        </div>
+                        <div class="benefit-card">
+
+                            <h3 class="benefit-title">Premium Amenities</h3>
+                            <p class="benefit-description">High-speed WiFi, printing, phone booths, and meeting rooms</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Plans -->
+            <section class="membership-plans" id="membership-plans">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Choose your plan</h2>
+                        <p class="section-subtitle">Flexible membership options to match your work style</p>
+                    </div>
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Hot Desk Access</h3>
+                                <div class="plan-price">
+                                    <span class="price">$99</span>
+                                    <span class="period">per month</span>
+                                </div>
+                                <p class="plan-description">Flexible workspace with shared desks</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Access to common areas</li>
+                                <li>High-speed WiFi</li>
+                                <li>Printing credits included</li>
+                                <li>Coffee and tea</li>
+                                <li>Community events</li>
+                            </ul>
+                            <button class="btn btn-outline btn-full-width">Get Started</button>
+                        </div>
+                        
+                        <div class="plan-card popular">
+                            <div class="plan-badge">Most Popular</div>
+                            <div class="plan-header">
+                                <h3 class="plan-name">Dedicated Desk</h3>
+                                <div class="plan-price">
+                                    <span class="price">$199</span>
+                                    <span class="period">per month</span>
+                                </div>
+                                <p class="plan-description">Your own desk in a shared workspace</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Personal dedicated desk</li>
+                                <li>Storage space</li>
+                                <li>24/7 access</li>
+                                <li>Meeting room credits</li>
+                                <li>Phone booth access</li>
+                                <li>Mail handling</li>
+                            </ul>
+                            <button class="btn btn-primary-large btn-full-width">Get Started</button>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Private Office Access</h3>
+                                <div class="plan-price">
+                                    <span class="price">$299</span>
+                                    <span class="period">per month</span>
+                                </div>
+                                <p class="plan-description">Private workspace with team access</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Lockable private office</li>
+                                <li>Team workspace for up to 4</li>
+                                <li>Unlimited meeting rooms</li>
+                                <li>Dedicated phone line</li>
+                                <li>Customizable space</li>
+                                <li>Priority support</li>
+                            </ul>
+                            <button class="btn btn-outline btn-full-width">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Amenities Section -->
+            <section class="amenities">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">World-class amenities</h2>
+                        <p class="section-subtitle">Everything you need to be productive and comfortable</p>
+                    </div>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">High-Speed WiFi</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">Meeting Rooms</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">Phone Booths</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">Kitchen Facilities</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">Printing Services</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">24/7 Access</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">Events & Workshops</span>
+                        </div>
+                        <div class="amenity-item">
+                            
+                            <span class="amenity-name">Global Access</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Locations -->
+            <section class="coworking-locations" id="coworking-locations">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured locations</h2>
+                        <p class="section-subtitle">Discover some of our most popular coworking spaces</p>
+                    </div>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/9ad3f36ad39096736024475a597d76e3cf063632.jpg" alt="Times Square Location">
+                            </div>
+                            <div class="location-info">
+                                <h3 class="location-name">Times Square</h3>
+                                <p class="location-address">1460 Broadway, New York, NY 10036</p>
+                                <p class="location-capacity">500+ members</p>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1753161867/pplx_project_search_images/96d2506adfe2f4f7a7dbced38b3220c8730c3db6.jpg" alt="SOMA Location">
+                            </div>
+                            <div class="location-info">
+                                <h3 class="location-name">SOMA</h3>
+                                <p class="location-address">535 Mission St, San Francisco, CA 94105</p>
+                                <p class="location-capacity">350+ members</p>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/7ccc43b74a0e30790bcc6ec2d32cb4737cb4f11f.jpg" alt="Shoreditch Location">
+                            </div>
+                            <div class="location-info">
+                                <h3 class="location-name">Shoreditch</h3>
+                                <p class="location-address">1 Fore St, London EC2Y 9DT, UK</p>
+                                <p class="location-capacity">400+ members</p>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">What our members say</h2>
+                        <p class="section-subtitle">Join thousands of satisfied members who've found their perfect workspace</p>
+                    </div>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <p>"WeWork's coworking spaces have been instrumental in growing our startup. The networking opportunities are incredible."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">SC</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Sarah Chen</h4>
+                                    <p class="author-company">TechFlow Solutions</p>
+                                    <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <p>"The flexibility to work from any WeWork location worldwide has transformed how we do business."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MR</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Marcus Rodriguez</h4>
+                                    <p class="author-company">Global Consulting Partners</p>
+                                    <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <p>"Professional amenities and a vibrant community make WeWork the perfect workspace solution."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">LP</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Lisa Park</h4>
+                                    <p class="author-company">Creative Design Studio</p>
+                                    <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Frequently asked questions</h2>
+                        <p class="section-subtitle">Get answers to common questions about our coworking spaces</p>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What's included in my coworking membership?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Your membership includes access to shared workspaces, high-speed WiFi, printing credits, coffee and tea, community events, and use of common areas during business hours.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How do I book a desk or meeting room?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Use the WeWork mobile app or web platform to reserve desks and meeting rooms. Members can book spaces up to 7 days in advance.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I bring guests to the workspace?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, members can bring guests for day passes. Guest policies may vary by location, so check with your local community team.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What are the operating hours?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Most WeWork locations are open 24/7 for members with dedicated desks or private offices. Hot desk members typically have access during business hours (6 AM - 11 PM).</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is parking available?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Parking availability varies by location. Many urban locations offer bike storage, and some suburban locations include parking. Check your specific location for details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coworking Contact Section -->
+            <section class="coworking-contact">
+                <div class="container">
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Ready to join our community?</h2>
+                            <p class="contact-description">Get in touch with our team to schedule a tour and find the perfect coworking solution for your needs.</p>
+                            <div class="contact-ctas">
+                                <button class="btn btn-primary-large">Schedule a Tour</button>
+                                <button class="btn btn-secondary-large" onclick="navigateHome()">Explore More Options</button>
+                            </div>
+                        </div>
+                        <form class="contact-form" id="coworking-contact-form">
+                            <div class="form-group">
+                                <label for="co-name" class="form-label">Full Name</label>
+                                <input type="text" id="co-name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-email" class="form-label">Email Address</label>
+                                <input type="email" id="co-email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-plan" class="form-label">Interested Plan</label>
+                                <select id="co-plan" name="plan" class="form-control">
+                                    <option value="hot-desk">Hot Desk Access</option>
+                                    <option value="dedicated-desk">Dedicated Desk</option>
+                                    <option value="private-office">Private Office Access</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-message" class="form-label">Additional Information</label>
+                                <textarea id="co-message" name="message" class="form-control" rows="4" placeholder="Tell us about your workspace needs..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-large btn-full-width">Get Started Today</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">WorkTribe</h3>
+                    <p class="footer-description">Making life work. Workspace, community, and services for creators and businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Workspace</h4>
+                    <ul class="footer-links">
+                        <li><a href="officespace.html" class="footer-link">Office spaces</a></li>
+                        <li><a href="coworking.html" class="footer-link">Coworking Spaces</a></li>
+                    
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Worktribe. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

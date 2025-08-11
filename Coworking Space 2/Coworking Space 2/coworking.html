@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeWork - Made for work. Built for business.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+            <!-- Coworking Hero Section -->
+            <section class="coworking-hero">
+                <div class="hero-background">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754672822/pplx_project_search_images/35c570917e874e6502f2129aef5bb283a116758b.jpg" alt="Coworking Space" class="hero-image">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Coworking Spaces</h1>
+                    <p class="hero-subtitle">Join a vibrant community of entrepreneurs, freelancers, and growing companies in our flexible shared workspaces designed to inspire productivity and collaboration.</p>
+                    <div class="hero-ctas">
+                        <button class="btn btn-primary-large" onclick="scrollToSection('coworking-locations')">Find a Location</button>
+                        <button class="btn btn-secondary-large" onclick="scrollToSection('membership-plans')">Available options</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="coworking-benefits">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Why choose Coworking Spaces from WorkTribe.?</h2>
+                        <p class="section-subtitle">Everything you need to do your best work, plus the community to inspire it</p>
+                    </div>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔐</div>
+                            <h3 class="benefit-title">Unmatched Safety & Security</h3>
+                            <p class="benefit-description">24/7 high-definition surveillance inside and outside, biometric access, emergency call buttons, and award-winning workplace safety measures ensure you work with total peace of mind.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🖥️💰</div>
+                            <h3 class="benefit-title">Seamless Booking & Transparent Pricing</h3>
+                            <p class="benefit-description">Book desks, rooms, or tours instantly online with no hidden fees. Real-time availability and clear pricing make planning your workday effortless.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">✅</div>
+                            <h3 class="benefit-title">Verified Workspaces </h3>
+                            <p class="benefit-description">Every listing is physically or virtually inspected by our team or trusted local ambassadors. You’ll see the Verified Badge only on spaces that match our quality checklist — so what you see is exactly what you get.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🛜</div>
+                            <h3 class="benefit-title">Premium Amenities</h3>
+                            <p class="benefit-description">High-speed WiFi, printing, phone booths, and meeting rooms</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⭐</div>
+                            <h3 class="benefit-title">Transparent Ratings & Reviews</h3>
+                            <p class="benefit-description">Real, detailed feedback from professionals who’ve actually worked there. Ratings cover internet speed, comfort, noise levels, and host responsiveness — so you can choose with confidence.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">📍</div>
+                            <h3 class="benefit-title">Prime Locations for Every Work Style</h3>
+                            <p class="benefit-description">Work close to home, in the heart of the city, or in a quiet creative corner — our platform covers a wide range of location types so your workspace fits your lifestyle.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Plans -->
+            <section class="membership-plans" id="membership-plans">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Commonly Available Options</h2>
+                        <p class="section-subtitle">Flexible membership options to match your work style</p>
+                    </div>
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Dedicated Desk</h3>
+                                <div class="plan-price">
+                                    <span class="price">Rs.8000</span>
+                                    <span class="period">per month onwards.</span>
+                                </div>
+                                 <div class="plan-media">
+            <img src="assets/hot-desk.jpg" alt="Hot Desk Access" />
+          </div>
+                                <p class="plan-description">Flexible workspace with dedicated desks</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Reserved desk that’s exclusively yours</li>
+                                <li>High-speed WiFi</li>
+                                <li>Printing credits included</li>
+                                <li>Coffee and tea</li>
+                                <li>Community events</li>
+                            </ul>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            
+
+                            <button class="btn btn-outline btn-full-width">Book Now</button>
+                        </div>
+                        
+                        <div class="plan-card popular">
+                            <div class="plan-badge">Most Popular</div>
+                            <div class="plan-header">
+                                <h3 class="plan-name">Day Coworking</h3>
+                                <div class="plan-price">
+                                    <span class="price">Rs.500</span>
+                                    <span class="period">per month onwards.</span>
+                                </div>
+                                 <div class="plan-media">
+            <img src="assets/dedicated-desk.jpg" alt="Dedicated Desk" />
+          </div>
+                                <p class="plan-description">Walk in and work instantly—no commitments, no long-term contracts. Ideal for travelers, remote workers, or anyone who needs a desk for a day.</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Access to open-plan desk seating</li>
+                                <li>Storage space</li>
+                                <li>24/7 access</li>
+                                <li>Meeting room credits</li>
+                                <li>Plug-and-play setup—just bring your laptop</li>
+                                <li>Flexible working hours for the day</li>
+                            </ul>
+                            <br>
+                
+                            <button class="btn btn-primary-large btn-full-width">Book Now</button>
+                        </div>
+                        
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Coworking Membership</h3>
+                                <div class="plan-price">
+                                    <span class="price">Rs.2500</span>
+                                    <span class="period">per month onwards</span>
+                                </div>
+                                 <div class="plan-media">
+            <img src="assets/private-office.jpg" alt="Private Office Access" />
+          </div>
+                                <p class="plan-description">Flexible plans for 5, 10, or unlimited coworking days. Perfect for freelancers, hybrid workers, and small teams who need occasional office space.</p>
+                            </div>
+                            <ul class="plan-features">
+                                <li>Flexible access—choose 5, 10, or unlimited days each month</li>
+                                <li>Work from any available desk in the coworking area</li>
+                                <li>Discounted meeting room booking rates</li>
+                                <li>Access to common areas like the pantry, lounge, and breakout spaces</li> 
+                            </ul>
+                        
+                            <button class="btn btn-outline btn-full-width">Book Now</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Amenities Section -->
+            <section class="amenities">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">World-class amenities</h2>
+                        <p class="section-subtitle">Everything you need to be productive and comfortable</p>
+                    </div>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <span class="amenity-icon">📶</span>
+                            <span class="amenity-name">High-Speed WiFi</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🏢</span>
+                            <span class="amenity-name">Meeting Rooms</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">📞</span>
+                            <span class="amenity-name">Phone Booths</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🍽️</span>
+                            <span class="amenity-name">Kitchen Facilities</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🖨️</span>
+                            <span class="amenity-name">Printing Services</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🔑</span>
+                            <span class="amenity-name">24/7 Access</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🎯</span>
+                            <span class="amenity-name">Events & Workshops</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🌍</span>
+                            <span class="amenity-name">Global Access</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🚨</span>
+                            <span class="amenity-name">Workplace safety-certified space</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🪑</span>
+                            <span class="amenity-name"> ⁠Ergonomic Furniture
+</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Locations -->
+            <section class="coworking-locations" id="coworking-locations">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured locations</h2>
+                        <p class="section-subtitle">Discover some of our most popular coworking spaces</p>
+                    </div>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="assets/mumbai.jpg" alt="Mumbai">
+                            </div>
+                            <div class="location-info">
+                                <h3 class="location-name">Mumbai</h3>
+                                <p class="location-address">Located in the city’s most sought-after commercial and social hotspots, designed to keep you at the center of opportunity and growth.</p>
+                                <p class="location-capacity">8000+ seats</p>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="assets/bangalore.jpg" alt="Bengaluru">
+                            </div>
+                            <div class="location-info">
+                                <h3 class="location-name">Bengaluru</h3>
+                                <p class="location-address">Positioned in the heart of bustling work zones, surrounded by the city’s energetic startup and corporate culture.</p>
+                                <p class="location-capacity">10000+ seats</p>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="assets/hyderabad.jpg" alt="Hyderabad">
+                            </div>
+                            <div class="location-info">
+                                <h3 class="location-name">Hyderabad</h3>
+                                <p class="location-address">Set in thriving business districts where innovation meets convenience, offering a perfect balance of work and lifestyle.</p>
+                                <p class="location-capacity">7000+ seats</p>
+                                <button class="btn btn-outline">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">What our users say</h2>
+                        <p class="section-subtitle">Join thousands of satisfied members who've found their perfect workspace</p>
+                    </div>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <p>"The dedicated desk plan gave me a stable workspace without the burden of a long lease. Having meeting room credits included was a game changer for pitching to clients."
+"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">RM</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Rohan Mehta </h4>
+                                    <p class="author-company">Senior Product Manager, Microsoft India</p>
+                                    <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <p>"I booked a hot desk for two weeks while visiting Bengaluru, and the verified photos matched perfectly. The internet was fast, the ambience was inspiring, and I even ended up collaborating with someone I met there!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MR</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Marcus Rodriguez</h4>
+                                    <p class="author-company">Global Consulting Partners</p>
+                                    <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <p>"We needed a private office for a month while relocating our headquarters. The process was seamless, and the host was incredibly supportive. It felt like our own office, without any setup hassle."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">LP</div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Lisa Park</h4>
+                                    <p class="author-company">Creative Design Studio</p>
+                                    <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Frequently asked questions</h2>
+                        <p class="section-subtitle">Get answers to common questions about our coworking spaces</p>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What's included in my coworking membership?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Your membership includes access to shared workspaces, high-speed WiFi, printing credits, coffee and tea, community events, and use of common areas during business hours depending on the various service providers.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>How do I book a desk or meeting room?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Use the Worktribe web platform to reserve desks and meeting rooms based on the availability.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Can I bring guests to the workspace?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, members can bring guests for day passes. Guest policies may vary by location, so check with your local community team.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>What are the operating hours?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Most Worktribe locations are open 24/7 for members with dedicated desks or private offices. Hot desk members typically have access during business hours (6 AM - 11 PM).</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span>Is parking available?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Parking availability varies by location. Many urban locations offer bike storage, and some suburban locations include parking. Check your specific location for details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coworking Contact Section -->
+            <section class="coworking-contact">
+                <div class="container">
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Ready to join our community?</h2>
+                            <p class="contact-description">Get in touch with our team to schedule a tour and find the perfect coworking solution for your needs.</p>
+                            <div class="contact-ctas">
+                                <button class="btn btn-primary-large">Schedule a Tour</button>
+                                <button class="btn btn-secondary-large" onclick="navigateHome()">Explore More Options</button>
+                            </div>
+                        </div>
+                        <form class="contact-form" id="coworking-contact-form">
+                            <div class="form-group">
+                                <label for="co-name" class="form-label">Full Name</label>
+                                <input type="text" id="co-name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-email" class="form-label">Email Address</label>
+                                <input type="email" id="co-email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-plan" class="form-label">Interested Plan</label>
+                                <select id="co-plan" name="plan" class="form-control">
+                                    <option value="hot-desk">Hot Desk Access</option>
+                                    <option value="dedicated-desk">Dedicated Desk</option>
+                                    <option value="private-office">Private Office Access</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="co-message" class="form-label">Additional Information</label>
+                                <textarea id="co-message" name="message" class="form-control" rows="4" placeholder="Tell us about your workspace needs..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-large btn-full-width">Get Started Today</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">WeWork</h3>
+                    <p class="footer-description">Making life work. Workspace, community, and services for creators and businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Workspace</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Private Office</a></li>
+                        <li><a href="#coworking" class="footer-link" onclick="navigateToCoworking(event)">Coworking</a></li>
+                        <li><a href="#" class="footer-link">Meeting Rooms</a></li>
+                        <li><a href="#" class="footer-link">Event Space</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Solutions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Enterprise</a></li>
+                        <li><a href="#" class="footer-link">Startup</a></li>
+                        <li><a href="#" class="footer-link">Freelancer</a></li>
+                        <li><a href="#" class="footer-link">Remote Teams</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Press</a></li>
+                        <li><a href="#" class="footer-link">Investors</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 WeWork. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
